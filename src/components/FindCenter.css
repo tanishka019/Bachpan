@@ -1,0 +1,321 @@
+/* ===========================
+   FIND CENTER / CONTACT SECTION
+   =========================== */
+.find-center {
+  background: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.find-center__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.find-center__bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+.find-center__bg-blob--1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(124,58,237,0.07) 0%, transparent 70%);
+  top: -150px;
+  left: -100px;
+}
+
+.find-center__bg-blob--2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(13,148,136,0.06) 0%, transparent 70%);
+  bottom: -100px;
+  right: -80px;
+}
+
+.find-center__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+/* Info Side */
+.find-center__info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.find-center__contact-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fc-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--bg-light);
+  border: 1px solid var(--purple-100);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+  transition: var(--transition);
+}
+
+.fc-card:hover {
+  background: var(--purple-50);
+  border-color: var(--purple-300);
+  transform: translateX(4px);
+}
+
+.fc-card > span {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  line-height: 1.2;
+}
+
+.fc-card strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--purple-800);
+  margin-bottom: 2px;
+}
+
+.fc-card p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* Cities */
+.find-center__cities {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.find-center__cities-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+}
+
+.find-center__city-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.find-center__city-tag {
+  background: var(--gray-100);
+  color: var(--gray-700);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  transition: var(--transition);
+  cursor: default;
+}
+
+.find-center__city-tag:hover {
+  background: var(--purple-100);
+  color: var(--purple-700);
+}
+
+.find-center__city-tag--more {
+  background: var(--purple-700);
+  color: var(--white);
+}
+
+/* Form */
+.find-center__form-wrap {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+}
+
+.find-center__form {
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.find-center__form-header {
+  border-bottom: 1px solid var(--gray-100);
+  padding-bottom: 20px;
+}
+
+.find-center__form-header h3 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.find-center__form-header p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--text-dark);
+}
+
+.form-group input,
+.form-group select {
+  padding: 11px 14px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  background: var(--white);
+  transition: var(--transition);
+  outline: none;
+  width: 100%;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--purple-500);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+.form-group input::placeholder {
+  color: var(--gray-300);
+}
+
+.form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+/* Program chips */
+.form-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.form-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.form-chip input[type="radio"] {
+  display: none;
+}
+
+.form-chip:hover {
+  border-color: var(--purple-400);
+  color: var(--purple-600);
+  background: var(--purple-50);
+}
+
+.form-chip--active {
+  background: var(--purple-700);
+  border-color: var(--purple-700);
+  color: var(--white);
+}
+
+.find-center__submit {
+  width: 100%;
+  justify-content: center;
+  padding: 14px;
+  font-size: 0.95rem;
+}
+
+.find-center__privacy {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Success State */
+.find-center__success {
+  padding: 64px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.find-center__success-emoji {
+  font-size: 4rem;
+  animation: bounce-in 0.5s ease;
+}
+
+.find-center__success h3 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: var(--text-dark);
+}
+
+.find-center__success p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 320px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .find-center__layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .find-center__form {
+    padding: 24px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

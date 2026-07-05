@@ -1,0 +1,204 @@
+/* ===========================
+   PROGRAMS SECTION
+   =========================== */
+.programs {
+  background: var(--bg-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.programs::before {
+  content: '🎨';
+  position: absolute;
+  font-size: 10rem;
+  opacity: 0.04;
+  top: -20px;
+  right: -30px;
+  pointer-events: none;
+}
+
+.programs__header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.programs__header .section-subtitle {
+  margin: 0 auto;
+}
+
+.programs__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Program Card */
+.prog-card {
+  border-radius: var(--radius-xl);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+
+.prog-card::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+}
+
+/* Card Color Themes */
+.card-purple {
+  background: linear-gradient(145deg, #7c3aed, #9333ea);
+  color: var(--white);
+  box-shadow: 0 10px 40px rgba(124, 58, 237, 0.3);
+}
+
+.card-teal {
+  background: linear-gradient(145deg, #0d9488, #0891b2);
+  color: var(--white);
+  box-shadow: 0 10px 40px rgba(13, 148, 136, 0.3);
+}
+
+.card-coral {
+  background: linear-gradient(145deg, #ea580c, #f97316);
+  color: var(--white);
+  box-shadow: 0 10px 40px rgba(234, 88, 12, 0.3);
+}
+
+.card-golden {
+  background: linear-gradient(145deg, #d97706, #f59e0b);
+  color: var(--white);
+  box-shadow: 0 10px 40px rgba(217, 119, 6, 0.3);
+}
+
+.prog-card:hover {
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  border-color: rgba(255,255,255,0.3);
+}
+
+.prog-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.prog-card__emoji {
+  font-size: 2.8rem;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+  line-height: 1;
+}
+
+/* Tags */
+.tag--coral { background: rgba(255,255,255,0.2); color: var(--white); }
+.tag--teal { background: rgba(255,255,255,0.2); color: var(--white); }
+.tag--golden { background: rgba(255,255,255,0.2); color: var(--white); }
+
+.prog-card__tag {
+  background: rgba(255,255,255,0.2) !important;
+  color: var(--white) !important;
+  font-size: 0.7rem;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.prog-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prog-card__title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--white);
+}
+
+.prog-card__age {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.12);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  width: fit-content;
+}
+
+.prog-card__desc {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.82);
+}
+
+.prog-card__features {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.prog-card__feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+}
+
+.prog-card__check {
+  width: 18px;
+  height: 18px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  flex-shrink: 0;
+  font-weight: 800;
+}
+
+.prog-card__btn {
+  background: rgba(255,255,255,0.15);
+  border: 1.5px solid rgba(255,255,255,0.4);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.prog-card__btn:hover {
+  background: rgba(255,255,255,0.3);
+  transform: translateX(4px);
+}
+
+@media (max-width: 1024px) {
+  .programs__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .programs__grid {
+    grid-template-columns: 1fr;
+  }
+}
