@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import './Navbar.css'
 
 const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'Programs', href: '#programs' },
-  { label: 'Why Bachpan', href: '#why-bachpan' },
-  { label: 'Our Approach', href: '#approach' },
-  { label: 'Gallery', href: '#gallery' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home',        href: '#home',        route: null },
+  { label: 'Programs',    href: '#programs',    route: null },
+  { label: 'Why Bachpan', href: '#why-bachpan', route: null },
+  { label: 'Our Approach',href: '#approach',    route: null },
+  { label: 'Gallery',     href: null,           route: '/gallery' },
+  { label: 'Contact',     href: '#contact',     route: null },
 ]
 
 export default function Navbar({ scrolled }) {
+  const navigate = useNavigate()
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeLink, setActiveLink] = useState('#home')
 
@@ -21,10 +23,14 @@ export default function Navbar({ scrolled }) {
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
 
-  const handleNav = (href) => {
-    setActiveLink(href)
+  const handleNav = (link) => {
     setMenuOpen(false)
-    const el = document.querySelector(href)
+    if (link.route) {
+      navigate(link.route)
+      return
+    }
+    setActiveLink(link.href)
+    const el = document.querySelector(link.href)
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
 
@@ -32,7 +38,7 @@ export default function Navbar({ scrolled }) {
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="container navbar__inner">
         {/* Logo */}
-        <a className="navbar__logo" onClick={() => handleNav('#home')} href="#home">
+        <a className="navbar__logo" onClick={() => handleNav({ href: '#home', route: null })} href="#home">
           <div className="navbar__logo-icon">
             <span>🌟</span>
           </div>
@@ -46,10 +52,10 @@ export default function Navbar({ scrolled }) {
         <nav className="navbar__links" aria-label="Main navigation">
           {navLinks.map(link => (
             <a
-              key={link.href}
-              href={link.href}
+              key={link.label}
+              href={link.route || link.href || '#'}
               className={`navbar__link ${activeLink === link.href ? 'navbar__link--active' : ''}`}
-              onClick={(e) => { e.preventDefault(); handleNav(link.href) }}
+              onClick={(e) => { e.preventDefault(); handleNav(link) }}
             >
               {link.label}
             </a>
@@ -60,7 +66,7 @@ export default function Navbar({ scrolled }) {
         <a
           href="#contact"
           className="btn btn-primary navbar__cta"
-          onClick={(e) => { e.preventDefault(); handleNav('#contact') }}
+          onClick={(e) => { e.preventDefault(); handleNav({ href: '#contact', route: null }) }}
         >
           Enroll Now
         </a>
@@ -109,10 +115,10 @@ export default function Navbar({ scrolled }) {
               <nav className="navbar__drawer-links">
                 {navLinks.map((link, i) => (
                   <motion.a
-                    key={link.href}
-                    href={link.href}
+                    key={link.label}
+                    href={link.route || link.href || '#'}
                     className="navbar__drawer-link"
-                    onClick={(e) => { e.preventDefault(); handleNav(link.href) }}
+                    onClick={(e) => { e.preventDefault(); handleNav(link) }}
                     initial={{ opacity: 0, x: 30 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.07 }}
@@ -124,7 +130,7 @@ export default function Navbar({ scrolled }) {
                   href="#contact"
                   className="btn btn-primary"
                   style={{ marginTop: '24px', justifyContent: 'center' }}
-                  onClick={(e) => { e.preventDefault(); handleNav('#contact') }}
+                  onClick={(e) => { e.preventDefault(); handleNav({ href: '#contact', route: null }) }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}

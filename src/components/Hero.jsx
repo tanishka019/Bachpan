@@ -18,6 +18,8 @@ const slides = [
     emoji3: '⭐',
     emoji4: '🎈',
     color: 'slide-purple',
+    bgImage: '/hero-1.jpg',
+    photoLabel: 'Happy Father\'s Day Celebration',
   },
   {
     id: 2,
@@ -34,6 +36,8 @@ const slides = [
     emoji3: '💡',
     emoji4: '🎯',
     color: 'slide-teal',
+    bgImage: '/hero-2.jpg',
+    photoLabel: 'Fun Learning Activities',
   },
   {
     id: 3,
@@ -50,6 +54,8 @@ const slides = [
     emoji3: '🚀',
     emoji4: '🌟',
     color: 'slide-coral',
+    bgImage: '/hero-3.jpg',
+    photoLabel: 'Green Day Celebration',
   },
 ]
 
@@ -81,11 +87,21 @@ export default function Hero() {
   }
 
   return (
-    <section className={`hero ${slide.color}`} id="home">
-      {/* Animated background blobs */}
-      <div className="hero__blob hero__blob--1" />
-      <div className="hero__blob hero__blob--2" />
-      <div className="hero__blob hero__blob--3" />
+    <section className={`hero ${slide.color}`} id="home" style={{ '--hero-bg': `url(${slide.bgImage})` }}>
+      {/* Real photo full-screen background */}
+      <AnimatePresence>
+        <motion.div
+          key={`bg-${slide.id}`}
+          className="hero__bg-photo"
+          style={{ backgroundImage: `url(${slide.bgImage})` }}
+          initial={{ opacity: 0, scale: 1.06 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        />
+      </AnimatePresence>
+      {/* Gradient overlay for text legibility */}
+      <div className="hero__overlay" />
 
       {/* Floating emojis */}
       <div className="hero__float hero__float--1">{slide.emoji1}</div>
@@ -166,16 +182,31 @@ export default function Hero() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Illustration Side */}
+        {/* Photo Frame Side */}
         <div className="hero__visual">
-          <div className="hero__visual-ring">
-            <div className="hero__visual-circle">
-              <div className="hero__visual-emoji">
-                {['🎨', '📖', '🎵', '⚽', '🧩'][current % 5]}
-              </div>
+          <div className="hero__photo-frame">
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={`photo-${slide.id}`}
+                src={slide.bgImage}
+                alt={slide.photoLabel}
+                className="hero__photo-img"
+                initial={{ opacity: 0, scale: 1.05, y: 10 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.97 }}
+                transition={{ duration: 0.55, ease: 'easeOut' }}
+              />
+            </AnimatePresence>
+            {/* Photo label badge */}
+            <div className="hero__photo-label">
+              <span>📸</span> {slide.photoLabel}
             </div>
+            {/* Decorative corner dots */}
+            <div className="hero__photo-dot hero__photo-dot--tl" />
+            <div className="hero__photo-dot hero__photo-dot--br" />
           </div>
-          {/* Card floaters */}
+
+          {/* Stat Cards */}
           <div className="hero__card hero__card--1">
             <span>🏆</span>
             <div>
