@@ -1,0 +1,210 @@
+/* ========================================================
+   CALENDAR VIEW — Bachpan Preschool Light Design System
+   ======================================================== */
+.cal-popover {
+  background: #ffffff;
+  border: 1.5px solid var(--purple-200, #e9d5ff);
+  border-radius: 18px;
+  box-shadow: 0 12px 36px rgba(124, 58, 237, 0.12);
+  padding: 16px;
+  width: 100%;
+  max-width: 320px;
+  color: var(--text-dark, #1e1b4b);
+  animation: cal-fade-in 0.2s ease-out;
+}
+
+@keyframes cal-fade-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--purple-100, #f3e8ff);
+}
+
+.cal-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cal-icon {
+  font-size: 1rem;
+}
+
+.cal-month-title {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--purple-900, #581c87);
+}
+
+.cal-nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cal-nav-btn {
+  background: var(--purple-50, #faf5ff);
+  border: 1px solid var(--purple-200, #e9d5ff);
+  color: var(--purple-700, #7c3aed);
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  line-height: 1;
+}
+
+.cal-nav-btn:hover {
+  background: var(--purple-100, #f3e8ff);
+  border-color: var(--purple-300, #d8b4fe);
+}
+
+.cal-close-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  margin-left: 4px;
+}
+
+.cal-close-btn:hover {
+  color: var(--purple-700, #7c3aed);
+  background: var(--purple-50, #faf5ff);
+}
+
+.cal-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--purple-400, #c084fc);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+}
+
+.cal-cell {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-dark, #1e1b4b);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.15s ease;
+  padding: 0;
+}
+
+.cal-cell--blank {
+  cursor: default;
+  pointer-events: none;
+}
+
+.cal-cell--day:hover {
+  background: var(--purple-50, #faf5ff);
+  border-color: var(--purple-200, #e9d5ff);
+}
+
+/* Day with photos / videos */
+.cal-cell--has-media {
+  font-weight: 700;
+  color: var(--purple-700, #7c3aed);
+  background: var(--purple-50, #faf5ff);
+  border-color: var(--purple-200, #e9d5ff);
+}
+
+.cal-cell--has-media:hover {
+  background: var(--purple-100, #f3e8ff);
+  border-color: var(--purple-300, #d8b4fe);
+}
+
+.cal-dot-badge {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--purple-600, #9333ea);
+  position: absolute;
+  bottom: 4px;
+}
+
+/* Selected Day */
+.cal-cell--selected {
+  background: linear-gradient(135deg, var(--purple-700, #7c3aed), var(--purple-600, #9333ea)) !important;
+  color: #ffffff !important;
+  font-weight: 800;
+  border-color: transparent !important;
+}
+
+.cal-cell--selected .cal-dot-badge {
+  background: #ffffff;
+}
+
+.cal-footer {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--purple-100, #f3e8ff);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.74rem;
+  color: var(--text-muted, #64748b);
+}
+
+.cal-legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cal-legend-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--purple-600, #9333ea);
+}
+
+.cal-clear-btn {
+  background: none;
+  border: none;
+  color: var(--secondary, #f97316);
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 2px 4px;
+}
+
+.cal-clear-btn:hover {
+  text-decoration: underline;
+}

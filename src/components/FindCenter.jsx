@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { addLead } from '../lib/leadsData'
 import './FindCenter.css'
 
 const cities = ['Mumbai', 'Delhi', 'Bangalore', 'Pune', 'Chennai', 'Hyderabad', 'Kolkata', 'Ahmedabad', 'Jaipur', 'Lucknow']
@@ -7,14 +8,26 @@ const cities = ['Mumbai', 'Delhi', 'Bangalore', 'Pune', 'Chennai', 'Hyderabad', 
 export default function FindCenter() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
-  const [city, setCity] = useState('')
   const [submitted, setSubmitted] = useState(false)
-  const [formData, setFormData] = useState({ name: '', phone: '', email: '', city: '', child_age: '', program: '' })
+  const [formData, setFormData] = useState({ name: '', phone: '', email: '', city: '', child_age: '', program: '', message: '' })
 
   const handleChange = (e) => setFormData(p => ({ ...p, [e.target.name]: e.target.value }))
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    addLead({
+      form_type: 'Contact Section',
+      parent_name: formData.name,
+      child_name: '',
+      phone: formData.phone,
+      email: formData.email,
+      city: formData.city,
+      child_age: formData.child_age,
+      program: formData.program || 'Playgroup',
+      message: formData.message || 'Campus visit enquiry submitted via website contact form.',
+      status: 'New',
+      admin_notes: 'Inquiry received from Contact & Campus Visit section.',
+    })
     setSubmitted(true)
   }
 
@@ -178,6 +191,29 @@ export default function FindCenter() {
                       </label>
                     ))}
                   </div>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="message">Questions or Preferred Visit Timing (Optional)</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={2}
+                    placeholder="e.g. Would like to visit on Saturday morning or inquire about school bus route..."
+                    value={formData.message}
+                    onChange={handleChange}
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem 1rem',
+                      borderRadius: '0.75rem',
+                      border: '1.5px solid #cbd5e1',
+                      background: '#f8fafc',
+                      fontSize: '0.9rem',
+                      fontFamily: 'inherit',
+                      resize: 'vertical',
+                      boxSizing: 'border-box'
+                    }}
+                  />
                 </div>
 
                 <button type="submit" className="btn btn-primary find-center__submit">

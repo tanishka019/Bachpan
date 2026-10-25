@@ -1,19 +1,21 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import './Navbar.css'
 
 const navLinks = [
-  { label: 'Home',        href: '#home',        route: null },
+  { label: 'Home',        href: '#home',        route: '/' },
   { label: 'Programs',    href: '#programs',    route: null },
   { label: 'Why Bachpan', href: '#why-bachpan', route: null },
   { label: 'Our Approach',href: '#approach',    route: null },
   { label: 'Gallery',     href: null,           route: '/gallery' },
   { label: 'Contact',     href: '#contact',     route: null },
+  { label: 'Admin',       href: null,           route: '/admin' },
 ]
 
 export default function Navbar({ scrolled }) {
   const navigate = useNavigate()
+  const location = useLocation()
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeLink, setActiveLink] = useState('#home')
 
@@ -23,15 +25,52 @@ export default function Navbar({ scrolled }) {
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
 
+  useEffect(() => {
+    if (location.pathname === '/gallery') {
+      setActiveLink('/gallery')
+    } else if (location.hash) {
+      setActiveLink(location.hash)
+      setTimeout(() => {
+        const el = document.querySelector(location.hash)
+        if (el) el.scrollIntoView({ behavior: 'smooth' })
+      }, 100)
+    } else if (location.pathname === '/') {
+      setActiveLink('#home')
+    }
+  }, [location.pathname, location.hash])
+
   const handleNav = (link) => {
     setMenuOpen(false)
-    if (link.route) {
+    if (link.route && !link.href) {
       navigate(link.route)
       return
     }
-    setActiveLink(link.href)
-    const el = document.querySelector(link.href)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+
+    if (link.route === '/' && (!link.href || link.href === '#home')) {
+      if (location.pathname !== '/') {
+        navigate('/')
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }
+      setActiveLink('#home')
+      return
+    }
+
+    if (link.href) {
+      if (location.pathname !== '/') {
+        navigate('/' + link.href)
+        return
+      }
+      setActiveLink(link.href)
+      const el = document.querySelector(link.href)
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
+  const handleEnrollClick = (e) => {
+    e.preventDefault()
+    setMenuOpen(false)
+    window.dispatchEvent(new CustomEvent('bachpan-open-enroll', { detail: { program: 'Playgroup' } }))
   }
 
   return (
@@ -54,7 +93,7 @@ export default function Navbar({ scrolled }) {
             <a
               key={link.label}
               href={link.route || link.href || '#'}
-              className={`navbar__link ${activeLink === link.href ? 'navbar__link--active' : ''}`}
+              className={`navbar__link ${(activeLink === link.href || (link.route && activeLink === link.route)) ? 'navbar__link--active' : ''}`}
               onClick={(e) => { e.preventDefault(); handleNav(link) }}
             >
               {link.label}
@@ -66,7 +105,7 @@ export default function Navbar({ scrolled }) {
         <a
           href="#contact"
           className="btn btn-primary navbar__cta"
-          onClick={(e) => { e.preventDefault(); handleNav({ href: '#contact', route: null }) }}
+          onClick={handleEnrollClick}
         >
           Enroll Now
         </a>
@@ -117,7 +156,7 @@ export default function Navbar({ scrolled }) {
                   <motion.a
                     key={link.label}
                     href={link.route || link.href || '#'}
-                    className="navbar__drawer-link"
+                    className={`navbar__drawer-link ${(activeLink === link.href || (link.route && activeLink === link.route)) ? 'navbar__drawer-link--active' : ''}`}
                     onClick={(e) => { e.preventDefault(); handleNav(link) }}
                     initial={{ opacity: 0, x: 30 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -130,7 +169,7 @@ export default function Navbar({ scrolled }) {
                   href="#contact"
                   className="btn btn-primary"
                   style={{ marginTop: '24px', justifyContent: 'center' }}
-                  onClick={(e) => { e.preventDefault(); handleNav({ href: '#contact', route: null }) }}
+                  onClick={handleEnrollClick}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}

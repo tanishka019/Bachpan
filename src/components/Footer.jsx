@@ -106,8 +106,8 @@ export default function Footer() {
           <div className="footer__bottom-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
-            <a href="#">Cookie Policy</a>
-            <a href="#">Sitemap</a>
+            <a href="/gallery">Photo & Video Journal</a>
+            <a href="/admin">Admin Portal (Demo)</a>
           </div>
         </div>
       </div>

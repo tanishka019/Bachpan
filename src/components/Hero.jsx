@@ -1,68 +1,23 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { getStoredHeroSlides } from '../lib/heroData'
 import './Hero.css'
 
-const slides = [
-  {
-    id: 1,
-    badge: '🎨 Play-Based Learning',
-    heading: 'Where Little Dreams',
-    headingAccent: 'Take Flight',
-    sub: 'A nurturing space where curiosity blooms, friendships grow, and every child discovers the joy of learning through play.',
-    cta1: 'Explore Programs',
-    cta2: 'Book a Visit',
-    cta1Href: '#programs',
-    cta2Href: '#contact',
-    emoji1: '🦋',
-    emoji2: '🌸',
-    emoji3: '⭐',
-    emoji4: '🎈',
-    color: 'slide-purple',
-    bgImage: '/hero-1.jpg',
-    photoLabel: 'Happy Father\'s Day Celebration',
-  },
-  {
-    id: 2,
-    badge: '🌱 Holistic Development',
-    heading: 'Nurturing Bright Minds',
-    headingAccent: 'Every Day',
-    sub: 'Our expert educators craft experiences that develop emotional intelligence, creativity, and a lifelong love for learning.',
-    cta1: 'Why Bachpan',
-    cta2: 'Enroll Today',
-    cta1Href: '#why-bachpan',
-    cta2Href: '#contact',
-    emoji1: '🦄',
-    emoji2: '🌈',
-    emoji3: '💡',
-    emoji4: '🎯',
-    color: 'slide-teal',
-    bgImage: '/hero-2.jpg',
-    photoLabel: 'Fun Learning Activities',
-  },
-  {
-    id: 3,
-    badge: '🏆 Award-Winning Curriculum',
-    heading: 'Building Foundations',
-    headingAccent: 'That Last a Lifetime',
-    sub: 'From playgroup to UKG, our structured yet fun curriculum sets children up for success in school and beyond.',
-    cta1: 'Our Curriculum',
-    cta2: 'Find a Center',
-    cta1Href: '#approach',
-    cta2Href: '#contact',
-    emoji1: '🎓',
-    emoji2: '📚',
-    emoji3: '🚀',
-    emoji4: '🌟',
-    color: 'slide-coral',
-    bgImage: '/hero-3.jpg',
-    photoLabel: 'Green Day Celebration',
-  },
-]
-
 export default function Hero() {
+  const [slides, setSlides] = useState(getStoredHeroSlides())
   const [current, setCurrent] = useState(0)
   const [direction, setDirection] = useState(1)
   const timerRef = useRef(null)
+
+  useEffect(() => {
+    const handleUpdate = () => setSlides(getStoredHeroSlides())
+    window.addEventListener('bachpan-hero-updated', handleUpdate)
+    window.addEventListener('storage', handleUpdate)
+    return () => {
+      window.removeEventListener('bachpan-hero-updated', handleUpdate)
+      window.removeEventListener('storage', handleUpdate)
+    }
+  }, [])
 
   const goTo = (index) => {
     setDirection(index > current ? 1 : -1)
@@ -77,7 +32,7 @@ export default function Hero() {
   useEffect(() => {
     timerRef.current = setInterval(next, 5500)
     return () => clearInterval(timerRef.current)
-  }, [])
+  }, [slides.length])
 
   const slide = slides[current]
 

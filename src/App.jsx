@@ -11,6 +11,8 @@ import Testimonials from './components/Testimonials'
 import FindCenter from './components/FindCenter'
 import Footer from './components/Footer'
 import GalleryPage from './pages/GalleryPage'
+import AdminPage from './pages/AdminPage'
+import EnrollModal from './components/EnrollModal'
 
 function HomePage() {
   const [scrolled, setScrolled] = useState(false)
@@ -38,12 +40,30 @@ function HomePage() {
 }
 
 function App() {
+  const [enrollOpen, setEnrollOpen] = useState(false)
+  const [enrollProgram, setEnrollProgram] = useState('Playgroup')
+
+  useEffect(() => {
+    const handleOpen = (e) => {
+      if (e.detail?.program) setEnrollProgram(e.detail.program)
+      setEnrollOpen(true)
+    }
+    window.addEventListener('bachpan-open-enroll', handleOpen)
+    return () => window.removeEventListener('bachpan-open-enroll', handleOpen)
+  }, [])
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/admin" element={<AdminPage />} />
       </Routes>
+      <EnrollModal
+        isOpen={enrollOpen}
+        onClose={() => setEnrollOpen(false)}
+        initialProgram={enrollProgram}
+      />
     </BrowserRouter>
   )
 }
