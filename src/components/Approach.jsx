@@ -34,7 +34,7 @@ const steps = [
     number: '04',
     emoji: '🚀',
     title: 'Grow & Thrive',
-    desc: 'We track each child\'s milestones and celebrate their individual progress, ensuring they leave Bachpan not just school-ready, but life-ready.',
+    desc: 'We track each child\'s milestones and celebrate their individual progress, ensuring they leave Wonder Roots not just school-ready, but life-ready.',
     highlight: 'Personalized growth tracking for every child',
     color: 'step-golden',
     side: 'right',

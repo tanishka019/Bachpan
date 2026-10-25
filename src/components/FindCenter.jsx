@@ -69,7 +69,7 @@ export default function FindCenter() {
                 <span>✉️</span>
                 <div>
                   <strong>Email Us</strong>
-                  <p>admissions@bachpan.edu.in</p>
+                  <p>admissions@wonderroots.edu.in</p>
                 </div>
               </div>
               <div className="fc-card">

@@ -1,5 +1,5 @@
 -- ====================================================================
--- SUPABASE SETUP SCRIPT FOR BACHPAN GALLERY
+-- SUPABASE SETUP SCRIPT FOR WONDER ROOTS GALLERY
 -- Run this in your Supabase SQL Editor:
 -- Dashboard -> SQL Editor -> New Query -> Paste this script -> Run (Ctrl+Enter)
 -- ====================================================================
@@ -80,7 +80,7 @@ USING (bucket_id = 'gallery-media');
 -- 6. Insert Starter Demo Data (optional, safe to run)
 INSERT INTO public.gallery_items (title, description, media_type, url, category)
 VALUES
-    ('Father''s Day Celebration', 'Precious moments celebrated with loving dads at Bachpan campus.', 'image', '/hero-1.jpg', 'Events & Celebrations'),
+    ('Father''s Day Celebration', 'Precious moments celebrated with loving dads at Wonder Roots campus.', 'image', '/hero-1.jpg', 'Events & Celebrations'),
     ('Creative Clay & Craft Hour', 'Little hands sculpting imagination into colorful art forms.', 'image', '/hero-2.jpg', 'Art & Craft'),
     ('Green Day Plantation', 'Learning environmental care and planting saplings in the garden.', 'image', '/hero-3.jpg', 'Outdoor & Nature'),
     ('Fun with Numbers & Puzzles', 'Interactive early numeracy games and interactive building blocks.', 'image', '/hero-2.jpg', 'Classroom & Learning'),

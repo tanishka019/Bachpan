@@ -223,7 +223,7 @@ export default function GalleryPage() {
 
   return (
     <div className="bp-gallery-page">
-      {/* Official Bachpan Site Navbar */}
+      {/* Official Wonder Roots Site Navbar */}
       <Navbar scrolled={true} />
 
       <main className="bp-gallery-main">
@@ -236,7 +236,7 @@ export default function GalleryPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="section-badge">📸 Life at Bachpan</span>
+              <span className="section-badge">📸 Life at Wonder Roots</span>
               <h1 className="section-title">
                 Moments of <span>Joy & Growth</span>
               </h1>
@@ -511,7 +511,7 @@ export default function GalleryPage() {
         </section>
       </main>
 
-      {/* Official Bachpan Site Footer */}
+      {/* Official Wonder Roots Site Footer */}
       <Footer />
 
       {/* Lightbox */}

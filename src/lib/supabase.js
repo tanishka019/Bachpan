@@ -5,7 +5,7 @@ export const DEFAULT_GALLERY_ITEMS = [
   {
     id: 'seed-1',
     title: "Father's Day Celebration",
-    description: 'Precious moments celebrated with loving dads at Bachpan campus with games and handmade cards.',
+    description: 'Precious moments celebrated with loving dads at Wonder Roots campus with games and handmade cards.',
     media_type: 'image',
     url: '/hero-1.jpg',
     category: 'Events & Celebrations',

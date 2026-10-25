@@ -31,12 +31,12 @@ export default function Gallery() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-badge">📸 Life at Bachpan</span>
+          <span className="section-badge">📸 Life at Wonder Roots</span>
           <h2 className="section-title">
             Moments of <span>Joy & Growth</span>
           </h2>
           <p className="section-subtitle">
-            Every day is a new adventure at Bachpan. Peek into the magical world our children inhabit.
+            Every day is a new adventure at Wonder Roots. Peek into the magical world our children inhabit.
           </p>
 
           <div className="gallery__filters">

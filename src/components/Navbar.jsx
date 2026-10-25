@@ -4,13 +4,13 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import './Navbar.css'
 
 const navLinks = [
-  { label: 'Home',        href: '#home',        route: '/' },
-  { label: 'Programs',    href: '#programs',    route: null },
-  { label: 'Why Bachpan', href: '#why-bachpan', route: null },
-  { label: 'Our Approach',href: '#approach',    route: null },
-  { label: 'Gallery',     href: null,           route: '/gallery' },
-  { label: 'Contact',     href: '#contact',     route: null },
-  { label: 'Admin',       href: null,           route: '/admin' },
+  { label: 'Home',             href: '#home',             route: '/' },
+  { label: 'Programs',         href: '#programs',         route: null },
+  { label: 'Why Wonder Roots', href: '#why-wonder-roots', route: null },
+  { label: 'Our Approach',     href: '#approach',         route: null },
+  { label: 'Gallery',          href: null,                route: '/gallery' },
+  { label: 'Contact',          href: '#contact',          route: null },
+  { label: 'Admin',            href: null,                route: '/admin' },
 ]
 
 export default function Navbar({ scrolled }) {
@@ -82,7 +82,7 @@ export default function Navbar({ scrolled }) {
             <span>🌟</span>
           </div>
           <div className="navbar__logo-text">
-            <span className="navbar__brand">Bachpan</span>
+            <span className="navbar__brand">Wonder Roots</span>
             <span className="navbar__tagline">The Foundation Stage</span>
           </div>
         </a>
@@ -145,7 +145,7 @@ export default function Navbar({ scrolled }) {
                 <div className="navbar__logo">
                   <div className="navbar__logo-icon"><span>🌟</span></div>
                   <div className="navbar__logo-text">
-                    <span className="navbar__brand">Bachpan</span>
+                    <span className="navbar__brand">Wonder Roots</span>
                     <span className="navbar__tagline">The Foundation Stage</span>
                   </div>
                 </div>

@@ -4,7 +4,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Stats from './components/Stats'
 import Programs from './components/Programs'
-import WhyBachpan from './components/WhyBachpan'
+import WhyWonderRoots from './components/WhyBachpan'
 import Approach from './components/Approach'
 import GalleryTeaser from './components/GalleryTeaser'
 import Testimonials from './components/Testimonials'
@@ -28,7 +28,7 @@ function HomePage() {
         <Hero />
         <Stats />
         <Programs />
-        <WhyBachpan />
+        <WhyWonderRoots />
         <Approach />
         <GalleryTeaser />
         <Testimonials />

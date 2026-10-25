@@ -98,7 +98,7 @@ export default function EnrollModal({ isOpen, onClose, initialProgram = 'Playgro
             <h2 className="enr-success__title">Enrollment Application Received!</h2>
             <p className="enr-success__desc">
               Thank you, <strong>{formData.parent_name}</strong>! We are thrilled to welcome{' '}
-              <strong>{formData.child_name || 'your child'}</strong> to the Bachpan family for the{' '}
+              <strong>{formData.child_name || 'your child'}</strong> to the Wonder Roots family for the{' '}
               <strong>{formData.program}</strong> program.
             </p>
 
@@ -124,7 +124,7 @@ export default function EnrollModal({ isOpen, onClose, initialProgram = 'Playgro
           <div className="enr-content">
             <div className="enr-header">
               <span className="enr-badge">🎒 Admissions 2026-27 Open</span>
-              <h2 className="enr-title">Enroll Your Child at Bachpan</h2>
+              <h2 className="enr-title">Enroll Your Child at Wonder Roots</h2>
               <p className="enr-subtitle">
                 Fill out the quick enrollment form below. Our principal and admissions team will contact you directly.
               </p>

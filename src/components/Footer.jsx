@@ -26,7 +26,7 @@ export default function Footer() {
         <div className="container footer__banner-inner">
           <div className="footer__banner-text">
             <h3>Ready to Begin?</h3>
-            <p>Join thousands of families who've given their children the Bachpan advantage.</p>
+            <p>Join thousands of families who've given their children the Wonder Roots advantage.</p>
           </div>
           <div className="footer__banner-actions">
             <button className="btn btn-white" onClick={() => scrollTo('#contact')}>
@@ -47,7 +47,7 @@ export default function Footer() {
             <div className="footer__logo">
               <div className="footer__logo-icon">🌟</div>
               <div>
-                <div className="footer__logo-name">Bachpan</div>
+                <div className="footer__logo-name">Wonder Roots</div>
                 <div className="footer__logo-sub">The Foundation Stage</div>
               </div>
             </div>
@@ -102,7 +102,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
-          <p>© 2024 Bachpan The Foundation Stage. All rights reserved.</p>
+          <p>© 2024 Wonder Roots The Foundation Stage. All rights reserved.</p>
           <div className="footer__bottom-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>

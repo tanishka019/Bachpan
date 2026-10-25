@@ -1,5 +1,5 @@
 // ====================================================================
-// BACHPAN ADMISSIONS & CONTACT LEADS DATA STORE
+// WONDER ROOTS ADMISSIONS & CONTACT LEADS DATA STORE
 // Manages inquiries from "Enroll Now" and "Contact Section" forms.
 // Persists in localStorage with Supabase sync capability.
 // ====================================================================
@@ -309,7 +309,7 @@ export function exportLeadsToCSV(leads) {
   const url = URL.createObjectURL(blob)
   const link = document.createElement('a')
   link.setAttribute('href', url)
-  link.setAttribute('download', `bachpan_admissions_leads_${new Date().toISOString().split('T')[0]}.csv`)
+  link.setAttribute('download', `wonder_roots_admissions_leads_${new Date().toISOString().split('T')[0]}.csv`)
   document.body.appendChild(link)
   link.click()
   document.body.removeChild(link)

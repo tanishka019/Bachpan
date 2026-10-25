@@ -357,9 +357,9 @@ export default function AdminPage() {
       id: `mem-${Date.now()}`,
       date,
       title: title.trim(),
-      caption: caption.trim() || 'A delightful moment captured at Bachpan Preschool campus.',
+      caption: caption.trim() || 'A delightful moment captured at Wonder Roots Preschool campus.',
       category,
-      location: location.trim() || 'Bachpan Campus',
+      location: location.trim() || 'Wonder Roots Campus',
       media_type: mediaType,
       url: mediaUrl,
     }
@@ -488,7 +488,7 @@ export default function AdminPage() {
       <div className="adm-light adm-lock-screen">
         <div className="adm-lock-card">
           <div className="adm-lock-icon">🔐</div>
-          <h2>Bachpan Admin Authentication</h2>
+          <h2>Wonder Roots Admin Authentication</h2>
           <p>Please enter the Admin PIN to manage gallery moments and retrieved form leads.</p>
 
           <form onSubmit={handlePinUnlock} className="adm-lock-form">
@@ -536,7 +536,7 @@ export default function AdminPage() {
             <div className="adm-nav__divider" />
             <div className="adm-nav__brand">
               <span className="adm-nav__tag">ADMIN PORTAL</span>
-              <span className="adm-nav__title">Bachpan Preschool Central</span>
+              <span className="adm-nav__title">Wonder Roots Central</span>
             </div>
           </div>
 

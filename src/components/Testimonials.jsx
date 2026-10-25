@@ -12,7 +12,7 @@ const testimonials = [
     role: 'Mother of Aanya, 4 years',
     avatar: '👩',
     rating: 5,
-    text: 'Bachpan has been a life-changing experience for our daughter. She went from a shy toddler to a confident, curious little girl who absolutely loves going to school every morning. The teachers are incredibly warm and attentive.',
+    text: 'Wonder Roots has been a life-changing experience for our daughter. She went from a shy toddler to a confident, curious little girl who absolutely loves going to school every morning. The teachers are incredibly warm and attentive.',
     location: 'Mumbai',
     program: 'Nursery',
   },
@@ -30,7 +30,7 @@ const testimonials = [
     role: 'Mother of Mira, 3 years',
     avatar: '👩‍👧',
     rating: 5,
-    text: 'The Parent Connect app is fantastic — I get daily updates with photos and videos of what Mira is doing. It gives me so much peace of mind. Bachpan truly partners with parents in the child\'s education.',
+    text: 'The Parent Connect app is fantastic — I get daily updates with photos and videos of what Mira is doing. It gives me so much peace of mind. Wonder Roots truly partners with parents in the child\'s education.',
     location: 'Bangalore',
     program: 'Playgroup',
   },
@@ -39,7 +39,7 @@ const testimonials = [
     role: 'Parents of Rohan, 6 years',
     avatar: '👨‍👩‍👦',
     rating: 5,
-    text: 'Rohan recently started Grade 1 at a top school and his teachers there commented on how well-prepared he was — socially, academically, and emotionally. We credit Bachpan entirely for that strong foundation.',
+    text: 'Rohan recently started Grade 1 at a top school and his teachers there commented on how well-prepared he was — socially, academically, and emotionally. We credit Wonder Roots entirely for that strong foundation.',
     location: 'Pune',
     program: 'UKG',
   },
@@ -48,7 +48,7 @@ const testimonials = [
     role: 'Mother of twins, 3.5 years',
     avatar: '👩‍👧‍👧',
     rating: 5,
-    text: 'Managing twins is challenging, but Bachpan\'s teachers handle both our kids with individual attention and love. The facilities are spotless, safe, and the children genuinely thrive here. Highly recommend!',
+    text: 'Managing twins is challenging, but Wonder Roots\' teachers handle both our kids with individual attention and love. The facilities are spotless, safe, and the children genuinely thrive here. Highly recommend!',
     location: 'Chennai',
     program: 'Nursery',
   },
@@ -85,10 +85,10 @@ export default function Testimonials() {
         >
           <span className="section-badge">💬 Parent Stories</span>
           <h2 className="section-title">
-            Families Who Trust <span>Bachpan</span>
+            Families Who Trust <span>Wonder Roots</span>
           </h2>
           <p className="section-subtitle">
-            Don't just take our word for it — hear from the parents who chose Bachpan for their most precious little ones.
+            Don't just take our word for it — hear from the parents who chose Wonder Roots for their most precious little ones.
           </p>
 
           {/* Summary stats */}

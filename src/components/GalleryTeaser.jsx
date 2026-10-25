@@ -31,7 +31,7 @@ export default function GalleryTeaser() {
 
           const dynamicPreviews = memories.slice(0, 5).map((item, idx) => ({
             img: item.url || '/hero-1.jpg',
-            label: item.title || item.category || 'Bachpan Moment',
+            label: item.title || item.category || 'Wonder Roots Moment',
             color: colorPalette[idx % colorPalette.length],
             span: spanPatterns[idx] || 'square',
             isVideo: item.media_type === 'video',
@@ -67,7 +67,7 @@ export default function GalleryTeaser() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-badge">📸 Life at Bachpan</span>
+          <span className="section-badge">📸 Life at Wonder Roots</span>
           <h2 className="section-title">
             Moments of <span>Joy & Growth</span>
           </h2>

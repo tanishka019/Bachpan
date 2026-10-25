@@ -41,12 +41,13 @@ const features = [
   },
 ]
 
-export default function WhyBachpan() {
+export default function WhyWonderRoots() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section className="why section-py" id="why-bachpan" ref={ref}>
+    <section className="why section-py" id="why-wonder-roots" ref={ref}>
+      <span id="why-bachpan" style={{ position: 'relative', top: '-100px', visibility: 'hidden' }} />
       <div className="container">
         <div className="why__layout">
           {/* Left: Header */}
@@ -58,10 +59,10 @@ export default function WhyBachpan() {
           >
             <span className="section-badge">💜 Why Choose Us</span>
             <h2 className="section-title">
-              What Makes Bachpan <span>Different</span>
+              What Makes Wonder Roots <span>Different</span>
             </h2>
             <p className="section-subtitle">
-              We go beyond academics. At Bachpan, we create an ecosystem where every child feels loved, challenged, and celebrated for who they are.
+              We go beyond academics. At Wonder Roots, we create an ecosystem where every child feels loved, challenged, and celebrated for who they are.
             </p>
             <div className="why__award">
               <span className="why__award-icon">🏆</span>
