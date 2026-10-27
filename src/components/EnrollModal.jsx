@@ -4,7 +4,7 @@ import { addLead } from '../lib/leadsData'
 import './EnrollModal.css'
 
 const CITIES = ['Mumbai', 'Delhi', 'Bangalore', 'Pune', 'Chennai', 'Hyderabad', 'Kolkata', 'Ahmedabad', 'Jaipur', 'Lucknow', 'Other']
-const PROGRAMS = ['Playgroup', 'Nursery', 'LKG', 'UKG']
+const PROGRAMS = ['Playgroup', 'Nursery', 'Junior KG']
 const AGE_GROUPS = [
   { label: '1.5 – 2 Years', value: '1.5-2 years' },
   { label: '2 – 3 Years', value: '2-3 years' },

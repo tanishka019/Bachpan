@@ -5,7 +5,6 @@ import Hero from './components/Hero'
 import Stats from './components/Stats'
 import Programs from './components/Programs'
 import WhyWonderRoots from './components/WhyBachpan'
-import Approach from './components/Approach'
 import GalleryTeaser from './components/GalleryTeaser'
 import Testimonials from './components/Testimonials'
 import FindCenter from './components/FindCenter'
@@ -29,7 +28,6 @@ function HomePage() {
         <Stats />
         <Programs />
         <WhyWonderRoots />
-        <Approach />
         <GalleryTeaser />
         <Testimonials />
         <FindCenter />

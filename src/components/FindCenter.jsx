@@ -178,7 +178,7 @@ export default function FindCenter() {
                 <div className="form-group">
                   <label>Program of Interest</label>
                   <div className="form-chips">
-                    {['Playgroup', 'Nursery', 'LKG', 'UKG'].map(p => (
+                    {['Playgroup', 'Nursery', 'Junior KG'].map(p => (
                       <label key={p} className={`form-chip ${formData.program === p ? 'form-chip--active' : ''}`}>
                         <input
                           type="radio"

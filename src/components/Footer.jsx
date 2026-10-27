@@ -1,7 +1,7 @@
 import './Footer.css'
 
 const footerLinks = {
-  Programs: ['Playgroup', 'Nursery', 'LKG', 'UKG', 'Summer Camp'],
+  Programs: ['Playgroup', 'Nursery', 'Junior KG', 'Summer Camp'],
   Company: ['About Us', 'Our Team', 'Careers', 'Press & Media', 'Blog'],
   Support: ['Admissions FAQ', 'Fee Structure', 'Scholarship', 'Contact Us', 'Feedback'],
 }

@@ -7,7 +7,6 @@ const navLinks = [
   { label: 'Home',             href: '#home',             route: '/' },
   { label: 'Programs',         href: '#programs',         route: null },
   { label: 'Why Wonder Roots', href: '#why-wonder-roots', route: null },
-  { label: 'Our Approach',     href: '#approach',         route: null },
   { label: 'Gallery',          href: null,                route: '/gallery' },
   { label: 'Contact',          href: '#contact',          route: null },
   { label: 'Admin',            href: null,                route: '/admin' },
