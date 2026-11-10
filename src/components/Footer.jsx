@@ -26,7 +26,7 @@ export default function Footer() {
         <div className="container footer__banner-inner">
           <div className="footer__banner-text">
             <h3>Ready to Begin?</h3>
-            <p>Join thousands of families who've given their children the Wonder Roots advantage.</p>
+            <p>Join thousands of families who've given their children the Nirankur advantage.</p>
           </div>
           <div className="footer__banner-actions">
             <button className="btn btn-white" onClick={() => scrollTo('#contact')}>
@@ -45,9 +45,18 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="footer__brand">
             <div className="footer__logo">
-              <div className="footer__logo-icon">🌟</div>
+              <img src="/logo.png" alt="Nirankur Logo" className="footer__logo-img" />
               <div>
-                <div className="footer__logo-name">Wonder Roots</div>
+                <div className="footer__logo-name brand-rainbow" style={{ fontSize: '1.45rem' }}>
+                  <span className="c-n1" style={{ color: '#86efac' }}>N</span>
+                  <span className="c-i" style={{ color: '#4ade80' }}>i</span>
+                  <span className="c-r1" style={{ color: '#f87171' }}>r</span>
+                  <span className="c-a" style={{ color: '#fb923c' }}>a</span>
+                  <span className="c-n2" style={{ color: '#c084fc' }}>n</span>
+                  <span className="c-k" style={{ color: '#93c5fd' }}>k</span>
+                  <span className="c-u" style={{ color: '#fde047' }}>u</span>
+                  <span className="c-r2" style={{ color: '#38bdf8' }}>r</span>
+                </div>
                 <div className="footer__logo-sub">The Foundation Stage</div>
               </div>
             </div>
@@ -102,7 +111,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
-          <p>© 2024 Wonder Roots The Foundation Stage. All rights reserved.</p>
+          <p>© 2024 Nirankur The Foundation Stage. All rights reserved.</p>
           <div className="footer__bottom-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>

@@ -2,8 +2,8 @@
    STATS SECTION
    =========================== */
 .stats {
-  background: linear-gradient(135deg, var(--purple-700) 0%, var(--purple-800) 50%, #4f46e5 100%);
-  padding: 48px 0;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #1c1917 100%);
+  padding: 52px 0;
   position: relative;
   overflow: hidden;
 }
@@ -51,13 +51,9 @@
   font-family: var(--font-heading);
   font-weight: 900;
   font-size: clamp(2rem, 4vw, 2.8rem);
-  color: var(--white);
   line-height: 1;
   margin-bottom: 6px;
-  background: linear-gradient(135deg, #fff, #e9d5ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
 }
 
 .stats__label {

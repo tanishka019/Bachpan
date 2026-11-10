@@ -35,8 +35,8 @@
 }
 
 .adm-nav__back {
-  background: #7c3aed;
-  border: 1px solid #7c3aed;
+  background: #15803d;
+  border: 1px solid #15803d;
   color: #ffffff;
   padding: 6px 14px;
   border-radius: 8px;
@@ -50,8 +50,8 @@
 }
 
 .adm-nav__back:hover {
-  background: #6d28d9;
-  border-color: #6d28d9;
+  background: #166534;
+  border-color: #166534;
   transform: translateY(-1px);
 }
 
@@ -81,7 +81,18 @@
 .adm-nav__brand {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+}
+
+.adm-nav__logo-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 1px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
 }
 
 .adm-nav__tag {
@@ -341,8 +352,8 @@
 }
 
 .adm-tab-btn.active {
-  color: #7c3aed;
-  border-bottom-color: #7c3aed;
+  color: #15803d;
+  border-bottom-color: #15803d;
 }
 
 .adm-tab-badge {
@@ -356,7 +367,7 @@
 
 .adm-tab-btn.active .adm-tab-badge {
   background: #f5f3ff;
-  color: #7c3aed;
+  color: #15803d;
 }
 
 .adm-tab-pill-new {
@@ -500,7 +511,7 @@
 }
 
 .adm-filter-input:focus {
-  border-color: #7c3aed;
+  border-color: #15803d;
   background: #ffffff;
 }
 
@@ -539,7 +550,7 @@
 }
 
 .adm-select:focus {
-  border-color: #7c3aed;
+  border-color: #15803d;
   background: #ffffff;
 }
 
@@ -696,7 +707,7 @@
 .adm-prog-tag {
   display: inline-block;
   background: #f5f3ff;
-  color: #7c3aed;
+  color: #15803d;
   font-size: 0.72rem;
   font-weight: 700;
   padding: 2px 7px;
@@ -795,7 +806,7 @@
   border: none;
   font-size: 0.72rem;
   font-weight: 600;
-  color: #7c3aed;
+  color: #15803d;
   cursor: pointer;
   padding: 0;
 }
@@ -955,7 +966,7 @@
   border: none;
   font-size: 0.82rem;
   font-weight: 700;
-  color: #7c3aed;
+  color: #15803d;
   cursor: pointer;
   text-decoration: underline;
 }
@@ -1019,9 +1030,9 @@
 }
 
 .adm-input:focus {
-  border-color: #7c3aed;
+  border-color: #15803d;
   background: #ffffff;
-  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
+  box-shadow: 0 0 0 3px rgba(21, 128, 61, );
 }
 
 .adm-type-switch {
@@ -1043,9 +1054,9 @@
 }
 
 .adm-switch-btn.active {
-  background: #7c3aed;
+  background: #15803d;
   color: #ffffff;
-  border-color: #7c3aed;
+  border-color: #15803d;
 }
 
 .adm-upload-zone {
@@ -1070,8 +1081,8 @@
 
 .adm-file-btn:hover {
   background: #e2e8f0;
-  border-color: #7c3aed;
-  color: #7c3aed;
+  border-color: #15803d;
+  color: #15803d;
 }
 
 .adm-presets {
@@ -1099,8 +1110,8 @@
 
 .adm-preset-btn.active {
   background: #f5f3ff;
-  border-color: #7c3aed;
-  color: #7c3aed;
+  border-color: #15803d;
+  color: #15803d;
   font-weight: 700;
 }
 
@@ -1149,7 +1160,7 @@
 .adm-submit-btn {
   width: 100%;
   padding: 11px;
-  background: #7c3aed;
+  background: #15803d;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -1160,7 +1171,7 @@
 }
 
 .adm-submit-btn:hover {
-  background: #6d28d9;
+  background: #166534;
   transform: translateY(-1px);
 }
 
@@ -1439,7 +1450,7 @@
 
 .adm-modal-quote {
   background: #f8fafc;
-  border-left: 3px solid #7c3aed;
+  border-left: 3px solid #15803d;
   padding: 10px 14px;
   border-radius: 0 8px 8px 0;
   font-size: 0.88rem;
@@ -1488,6 +1499,17 @@
   width: 100%;
   text-align: center;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+.adm-lock-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  display: block;
+  box-shadow: 0 4px 16px rgba(21, 128, 61, 0.2);
+  background: #ffffff;
 }
 
 .adm-lock-icon {
@@ -1565,7 +1587,7 @@
 .adm-batch-select-all input[type="checkbox"] {
   width: 16px;
   height: 16px;
-  accent-color: #7c3aed;
+  accent-color: #15803d;
   cursor: pointer;
 }
 
@@ -1591,7 +1613,7 @@
 .adm-item__check {
   width: 18px;
   height: 18px;
-  accent-color: #7c3aed;
+  accent-color: #15803d;
   cursor: pointer;
   flex-shrink: 0;
   margin-right: 2px;
@@ -1650,7 +1672,7 @@
 }
 
 .adm-hero-card--purple {
-  border-top: 4px solid #7c3aed;
+  border-top: 4px solid #15803d;
 }
 
 .adm-hero-card--orange {
@@ -1690,7 +1712,7 @@
 
 .adm-hero-card--purple .adm-hero-color-tag {
   background: #f5f3ff;
-  color: #7c3aed;
+  color: #15803d;
 }
 
 .adm-hero-card--orange .adm-hero-color-tag {

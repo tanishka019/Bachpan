@@ -41,12 +41,13 @@ const features = [
   },
 ]
 
-export default function WhyWonderRoots() {
+export default function WhyNirankur() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section className="why section-py" id="why-wonder-roots" ref={ref}>
+    <section className="why section-py" id="why-nirankur" ref={ref}>
+      <span id="why-wonder-roots" style={{ position: 'relative', top: '-100px', visibility: 'hidden' }} />
       <span id="why-bachpan" style={{ position: 'relative', top: '-100px', visibility: 'hidden' }} />
       <div className="container">
         <div className="why__layout">
@@ -57,12 +58,12 @@ export default function WhyWonderRoots() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <span className="section-badge">💜 Why Choose Us</span>
+            <span className="section-badge badge-gold">🌟 Why Choose Us</span>
             <h2 className="section-title">
-              What Makes Wonder Roots <span>Different</span>
+              What Makes Nirankur <span>Different</span>
             </h2>
             <p className="section-subtitle">
-              We go beyond academics. At Wonder Roots, we create an ecosystem where every child feels loved, challenged, and celebrated for who they are.
+              We go beyond academics. At Nirankur, we create an ecosystem where every child feels loved, challenged, and celebrated for who they are.
             </p>
             <div className="why__award">
               <span className="why__award-icon">🏆</span>

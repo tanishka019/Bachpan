@@ -34,7 +34,7 @@ const steps = [
     number: '04',
     emoji: '🚀',
     title: 'Grow & Thrive',
-    desc: 'We track each child\'s milestones and celebrate their individual progress, ensuring they leave Wonder Roots not just school-ready, but life-ready.',
+    desc: 'We track each child\'s milestones and celebrate their individual progress, ensuring they leave Nirankur not just school-ready, but life-ready.',
     highlight: 'Personalized growth tracking for every child',
     color: 'step-golden',
     side: 'right',
@@ -60,7 +60,7 @@ export default function Approach() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-badge">🌱 Our Approach</span>
+          <span className="section-badge badge-rose">✨ Our Approach</span>
           <h2 className="section-title">
             How We Help Children <span>Flourish</span>
           </h2>

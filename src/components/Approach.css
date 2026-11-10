@@ -22,7 +22,7 @@
 .approach__bg-circle--1 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(124,58,237,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(21, 128, 61, 0.08) 0%, transparent 70%);
   top: -100px;
   left: -100px;
 }
@@ -30,7 +30,7 @@
 .approach__bg-circle--2 {
   width: 350px;
   height: 350px;
-  background: radial-gradient(circle, rgba(13,148,136,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 70%);
   bottom: -80px;
   right: -80px;
 }
@@ -121,7 +121,7 @@
 }
 
 /* Step Colors */
-.step-purple { background: linear-gradient(135deg, var(--purple-700), var(--purple-500)); }
+.step-purple { background: linear-gradient(135deg, #7c3aed, #9333ea); }
 .step-teal { background: linear-gradient(135deg, var(--teal-600), var(--teal-400)); }
 .step-coral { background: linear-gradient(135deg, #dc2626, var(--coral-500)); }
 .step-golden { background: linear-gradient(135deg, var(--gold-500), var(--gold-400)); }
@@ -141,9 +141,9 @@
 
 .step-purple-card {
   background: white;
-  border-color: var(--purple-200);
+  border-color: #e9d5ff;
 }
-.step-purple-card:hover { border-color: var(--purple-400); }
+.step-purple-card:hover { border-color: #c084fc; box-shadow: 0 10px 40px rgba(124, 58, 237, 0.15); }
 
 .step-teal-card {
   background: white;

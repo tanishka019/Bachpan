@@ -3,10 +3,10 @@ import { motion, useInView } from 'framer-motion'
 import './Stats.css'
 
 const stats = [
-  { value: 500, suffix: '+', label: 'Learning Centers', icon: '🏫' },
-  { value: 50000, suffix: '+', label: 'Happy Children', icon: '😊', format: '50K+' },
-  { value: 15, suffix: '+', label: 'Years of Excellence', icon: '🏆' },
-  { value: 200, suffix: '+', label: 'Cities Across India', icon: '🌍' },
+  { value: 500, suffix: '+', label: 'Learning Centers', icon: '🏫', color: '#fbbf24' },
+  { value: 50000, suffix: '+', label: 'Happy Children', icon: '😊', format: '50K+', color: '#fb7185' },
+  { value: 15, suffix: '+', label: 'Years of Excellence', icon: '🏆', color: '#38bdf8' },
+  { value: 200, suffix: '+', label: 'Cities Across India', icon: '🌍', color: '#4ade80' },
 ]
 
 function CountUp({ target, suffix, format, start }) {
@@ -46,7 +46,7 @@ export default function Stats() {
               transition={{ delay: i * 0.12, duration: 0.5 }}
             >
               <div className="stats__icon">{stat.icon}</div>
-              <div className="stats__number">
+              <div className="stats__number" style={{ color: stat.color }}>
                 <CountUp
                   target={stat.value}
                   suffix={stat.suffix}

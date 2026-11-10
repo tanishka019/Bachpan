@@ -4,7 +4,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Stats from './components/Stats'
 import Programs from './components/Programs'
-import WhyWonderRoots from './components/WhyBachpan'
+import WhyNirankur from './components/WhyBachpan'
 import GalleryTeaser from './components/GalleryTeaser'
 import Testimonials from './components/Testimonials'
 import FindCenter from './components/FindCenter'
@@ -27,7 +27,7 @@ function HomePage() {
         <Hero />
         <Stats />
         <Programs />
-        <WhyWonderRoots />
+        <WhyNirankur />
         <GalleryTeaser />
         <Testimonials />
         <FindCenter />

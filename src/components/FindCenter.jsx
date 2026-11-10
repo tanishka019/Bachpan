@@ -48,7 +48,7 @@ export default function FindCenter() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <span className="section-badge">📍 Find Us</span>
+            <span className="section-badge badge-green">📍 Find Us</span>
             <h2 className="section-title">
               Start Your Child's <span>Beautiful Journey</span>
             </h2>
@@ -69,7 +69,7 @@ export default function FindCenter() {
                 <span>✉️</span>
                 <div>
                   <strong>Email Us</strong>
-                  <p>admissions@wonderroots.edu.in</p>
+                  <p>admissions@nirankur.edu.in</p>
                 </div>
               </div>
               <div className="fc-card">

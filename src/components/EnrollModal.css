@@ -66,8 +66,9 @@
 
 .enr-badge {
   display: inline-block;
-  background: #eff6ff;
-  color: #2563eb;
+  background: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fde68a;
   font-size: 0.8rem;
   font-weight: 700;
   padding: 0.3rem 0.85rem;
@@ -136,9 +137,9 @@
 }
 
 .enr-input:focus {
-  border-color: #7c3aed;
+  border-color: #15803d;
   background: #ffffff;
-  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+  box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.15);
 }
 
 .enr-programs-grid {
@@ -172,10 +173,10 @@
 }
 
 .enr-prog-pill.active {
-  background: #7c3aed;
+  background: #15803d;
   color: #ffffff;
-  border-color: #7c3aed;
-  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+  border-color: #15803d;
+  box-shadow: 0 4px 12px rgba(21, 128, 61, 0.3);
 }
 
 .enr-actions {
@@ -218,8 +219,13 @@
 }
 
 @keyframes bounce {
-  from { transform: translateY(0); }
-  to { transform: translateY(-8px); }
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-8px);
+  }
 }
 
 .enr-success__badge {
@@ -271,7 +277,7 @@
 .enr-ref-val {
   font-size: 1.5rem;
   font-weight: 800;
-  color: #7c3aed;
+  color: #15803d;
   font-family: monospace;
   letter-spacing: 0.08em;
 }

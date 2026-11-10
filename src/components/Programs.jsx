@@ -8,11 +8,11 @@ const programs = [
     emoji: '🧸',
     title: 'Playgroup',
     age: '1.5 – 2.5 years',
-    color: 'card-purple',
+    color: 'card-golden',
     description: 'A gentle first step into the world of learning. Through sensory play, music, and movement, we help toddlers explore their world safely.',
     features: ['Sensory Activities', 'Music & Rhythm', 'Motor Development', 'Social Skills'],
     tag: 'Most Popular',
-    tagColor: 'coral',
+    tagColor: 'golden',
   },
   {
     id: 'nursery',
@@ -51,7 +51,7 @@ export default function Programs() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-badge">🎒 Our Programs</span>
+          <span className="section-badge badge-purple">🎒 Our Programs</span>
           <h2 className="section-title">
             Learning Journeys for <span>Every Stage</span>
           </h2>

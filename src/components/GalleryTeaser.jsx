@@ -5,14 +5,14 @@ import { getStoredMemories } from '../lib/galleryData'
 import './GalleryTeaser.css'
 
 const fallbackPreviews = [
-  { img: '/hero-1.jpg', label: "Father's Day", color: '#7c3aed', span: 'tall', isVideo: false },
+  { img: '/hero-1.jpg', label: "Father's Day", color: '#15803d', span: 'tall', isVideo: false },
   { img: '/hero-2.jpg', label: 'Craft Activities', color: '#0d9488', span: 'square', isVideo: false },
   { img: '/hero-3.jpg', label: 'Green Day', color: '#16a34a', span: 'square', isVideo: false },
   { img: '/hero-2.jpg', label: 'Number Fun', color: '#2563eb', span: 'wide', isVideo: false },
   { img: '/hero-1.jpg', label: 'Dance & Rhymes', color: '#d97706', span: 'square', isVideo: true },
 ]
 
-const colorPalette = ['#7c3aed', '#0d9488', '#16a34a', '#2563eb', '#d97706', '#dc2626']
+const colorPalette = ['#15803d', '#f59e0b', '#16a34a', '#2563eb', '#d97706', '#ea580c']
 const spanPatterns = ['tall', 'square', 'square', 'wide', 'square']
 
 export default function GalleryTeaser() {
@@ -31,7 +31,7 @@ export default function GalleryTeaser() {
 
           const dynamicPreviews = memories.slice(0, 5).map((item, idx) => ({
             img: item.url || '/hero-1.jpg',
-            label: item.title || item.category || 'Wonder Roots Moment',
+            label: item.title || item.category || 'Nirankur Moment',
             color: colorPalette[idx % colorPalette.length],
             span: spanPatterns[idx] || 'square',
             isVideo: item.media_type === 'video',
@@ -67,7 +67,7 @@ export default function GalleryTeaser() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-badge">📸 Life at Wonder Roots</span>
+          <span className="section-badge badge-sky">📸 Life at Nirankur</span>
           <h2 className="section-title">
             Moments of <span>Joy & Growth</span>
           </h2>
@@ -109,7 +109,7 @@ export default function GalleryTeaser() {
                   >
                     <span
                       style={{
-                        background: 'rgba(124, 58, 237, 0.85)',
+                        background: 'rgba(21, 128, 61, 0.85)',
                         color: '#fff',
                         width: '42px',
                         height: '42px',

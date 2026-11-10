@@ -3,14 +3,14 @@ import { motion, useInView, AnimatePresence } from 'framer-motion'
 import './Gallery.css'
 
 const galleryItems = [
-  { id: 1, emoji: '🎨', label: 'Art & Craft', desc: 'Painting & Creative Expression', color: '#7c3aed', size: 'large' },
+  { id: 1, emoji: '🎨', label: 'Art & Craft', desc: 'Painting & Creative Expression', color: '#15803d', size: 'large' },
   { id: 2, emoji: '📚', label: 'Story Time', desc: 'Reading & Imagination', color: '#0d9488', size: 'small' },
   { id: 3, emoji: '🎵', label: 'Music & Dance', desc: 'Rhythm & Movement', color: '#f97316', size: 'small' },
   { id: 4, emoji: '🌿', label: 'Nature Walk', desc: 'Outdoor Exploration', color: '#16a34a', size: 'medium' },
   { id: 5, emoji: '🧩', label: 'Block Play', desc: 'STEM & Problem Solving', color: '#2563eb', size: 'medium' },
   { id: 6, emoji: '👩‍🍳', label: 'Cooking Class', desc: 'Life Skills & Math', color: '#dc2626', size: 'small' },
   { id: 7, emoji: '⚽', label: 'Sports Day', desc: 'Physical Fitness & Teamwork', color: '#d97706', size: 'small' },
-  { id: 8, emoji: '🎭', label: 'Drama Club', desc: 'Expression & Confidence', color: '#7c3aed', size: 'large' },
+  { id: 8, emoji: '🎭', label: 'Drama Club', desc: 'Expression & Confidence', color: '#f59e0b', size: 'large' },
   { id: 9, emoji: '🔬', label: 'Science Lab', desc: 'Curiosity & Discovery', color: '#0891b2', size: 'medium' },
 ]
 
@@ -31,12 +31,12 @@ export default function Gallery() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-badge">📸 Life at Wonder Roots</span>
+          <span className="section-badge badge-sky">📸 Life at Nirankur</span>
           <h2 className="section-title">
             Moments of <span>Joy & Growth</span>
           </h2>
           <p className="section-subtitle">
-            Every day is a new adventure at Wonder Roots. Peek into the magical world our children inhabit.
+            Every day is a new adventure at Nirankur. Peek into the magical world our children inhabit.
           </p>
 
           <div className="gallery__filters">

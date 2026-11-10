@@ -1,11 +1,11 @@
 /* ========================================================
-   CALENDAR VIEW — Wonder Roots Preschool Light Design System
+   CALENDAR VIEW — Nirankur Preschool Light Design System
    ======================================================== */
 .cal-popover {
   background: #ffffff;
-  border: 1.5px solid var(--purple-200, #e9d5ff);
+  border: 1.5px solid var(--purple-200, #bbf7d0);
   border-radius: 18px;
-  box-shadow: 0 12px 36px rgba(124, 58, 237, 0.12);
+  box-shadow: 0 12px 36px rgba(245, 158, 11, 0.15);
   padding: 16px;
   width: 100%;
   max-width: 320px;
@@ -24,7 +24,7 @@
   justify-content: space-between;
   margin-bottom: 12px;
   padding-bottom: 10px;
-  border-bottom: 1px solid var(--purple-100, #f3e8ff);
+  border-bottom: 1px solid var(--purple-100, #dcfce7);
 }
 
 .cal-title-wrap {
@@ -41,7 +41,7 @@
   font-family: var(--font-heading, 'Poppins', sans-serif);
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--purple-900, #581c87);
+  color: var(--purple-900, #14532d);
 }
 
 .cal-nav-buttons {
@@ -51,9 +51,9 @@
 }
 
 .cal-nav-btn {
-  background: var(--purple-50, #faf5ff);
-  border: 1px solid var(--purple-200, #e9d5ff);
-  color: var(--purple-700, #7c3aed);
+  background: var(--purple-50, #f0fdf4);
+  border: 1px solid var(--purple-200, #bbf7d0);
+  color: var(--purple-700, #15803d);
   width: 28px;
   height: 28px;
   border-radius: 6px;
@@ -67,8 +67,8 @@
 }
 
 .cal-nav-btn:hover {
-  background: var(--purple-100, #f3e8ff);
-  border-color: var(--purple-300, #d8b4fe);
+  background: var(--purple-100, #dcfce7);
+  border-color: var(--purple-300, #86efac);
 }
 
 .cal-close-btn {
@@ -87,8 +87,8 @@
 }
 
 .cal-close-btn:hover {
-  color: var(--purple-700, #7c3aed);
-  background: var(--purple-50, #faf5ff);
+  color: var(--purple-700, #15803d);
+  background: var(--purple-50, #f0fdf4);
 }
 
 .cal-weekdays {
@@ -97,7 +97,7 @@
   text-align: center;
   font-size: 0.72rem;
   font-weight: 700;
-  color: var(--purple-400, #c084fc);
+  color: var(--purple-400, #4ade80);
   text-transform: uppercase;
   margin-bottom: 6px;
   letter-spacing: 0.5px;
@@ -133,35 +133,35 @@
 }
 
 .cal-cell--day:hover {
-  background: var(--purple-50, #faf5ff);
-  border-color: var(--purple-200, #e9d5ff);
+  background: var(--purple-50, #f0fdf4);
+  border-color: var(--purple-200, #bbf7d0);
 }
 
 /* Day with photos / videos */
 .cal-cell--has-media {
   font-weight: 700;
-  color: var(--purple-700, #7c3aed);
-  background: var(--purple-50, #faf5ff);
-  border-color: var(--purple-200, #e9d5ff);
+  color: var(--purple-700, #15803d);
+  background: var(--purple-50, #f0fdf4);
+  border-color: var(--purple-200, #bbf7d0);
 }
 
 .cal-cell--has-media:hover {
-  background: var(--purple-100, #f3e8ff);
-  border-color: var(--purple-300, #d8b4fe);
+  background: var(--purple-100, #dcfce7);
+  border-color: var(--purple-300, #86efac);
 }
 
 .cal-dot-badge {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--purple-600, #9333ea);
+  background: var(--purple-600, #166534);
   position: absolute;
   bottom: 4px;
 }
 
 /* Selected Day */
 .cal-cell--selected {
-  background: linear-gradient(135deg, var(--purple-700, #7c3aed), var(--purple-600, #9333ea)) !important;
+  background: linear-gradient(135deg, var(--purple-700, #15803d), var(--purple-600, #166534)) !important;
   color: #ffffff !important;
   font-weight: 800;
   border-color: transparent !important;
@@ -174,7 +174,7 @@
 .cal-footer {
   margin-top: 12px;
   padding-top: 10px;
-  border-top: 1px solid var(--purple-100, #f3e8ff);
+  border-top: 1px solid var(--purple-100, #dcfce7);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -192,7 +192,7 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--purple-600, #9333ea);
+  background: var(--purple-600, #166534);
 }
 
 .cal-clear-btn {

@@ -357,9 +357,9 @@ export default function AdminPage() {
       id: `mem-${Date.now()}`,
       date,
       title: title.trim(),
-      caption: caption.trim() || 'A delightful moment captured at Wonder Roots Preschool campus.',
+      caption: caption.trim() || 'A delightful moment captured at Nirankur Preschool campus.',
       category,
-      location: location.trim() || 'Wonder Roots Campus',
+      location: location.trim() || 'Nirankur Campus',
       media_type: mediaType,
       url: mediaUrl,
     }
@@ -487,8 +487,8 @@ export default function AdminPage() {
     return (
       <div className="adm-light adm-lock-screen">
         <div className="adm-lock-card">
-          <div className="adm-lock-icon">🔐</div>
-          <h2>Wonder Roots Admin Authentication</h2>
+          <img src="/logo.png" alt="Nirankur" className="adm-lock-logo" />
+          <h2>Nirankur Admin Authentication</h2>
           <p>Please enter the Admin PIN to manage gallery moments and retrieved form leads.</p>
 
           <form onSubmit={handlePinUnlock} className="adm-lock-form">
@@ -535,8 +535,11 @@ export default function AdminPage() {
             </button>
             <div className="adm-nav__divider" />
             <div className="adm-nav__brand">
-              <span className="adm-nav__tag">ADMIN PORTAL</span>
-              <span className="adm-nav__title">Wonder Roots Central</span>
+              <img src="/logo.png" alt="Nirankur" className="adm-nav__logo-img" />
+              <div>
+                <span className="adm-nav__tag">ADMIN PORTAL</span>
+                <span className="adm-nav__title">Nirankur Central</span>
+              </div>
             </div>
           </div>
 
@@ -955,7 +958,7 @@ export default function AdminPage() {
                 <h2 className="adm-section-h2">Gallery & Media Moments Manager</h2>
                 <p className="adm-section-desc">
                   Publish photo and video memories grouped chronologically by date.
-                  Everything published here appears immediately on the <strong style={{ color: '#7c3aed' }}>Live Gallery (/gallery)</strong> and homepage teaser.
+                  Everything published here appears immediately on the <strong style={{ color: '#15803d' }}>Live Gallery (/gallery)</strong> and homepage teaser.
                 </p>
               </div>
 

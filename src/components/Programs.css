@@ -61,9 +61,9 @@
 
 /* Card Color Themes */
 .card-purple {
-  background: linear-gradient(145deg, #7c3aed, #9333ea);
+  background: linear-gradient(145deg, #15803d, #16a34a);
   color: var(--white);
-  box-shadow: 0 10px 40px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 10px 40px rgba(21, 128, 61, 0.3);
 }
 
 .card-teal {

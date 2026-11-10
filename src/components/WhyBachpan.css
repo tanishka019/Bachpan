@@ -1,5 +1,5 @@
 /* ===========================
-   WHY WONDER ROOTS SECTION
+   WHY NIRANKUR SECTION
    =========================== */
 .why {
   background: var(--white);
@@ -85,16 +85,16 @@
 
 /* Color Variants */
 .feat-purple {
-  background: var(--purple-50);
-  border-color: var(--purple-100);
+  background: #faf5ff;
+  border-color: #f3e8ff;
 }
 .feat-purple:hover {
-  background: var(--purple-100);
-  border-color: var(--purple-300);
-  box-shadow: var(--shadow-md);
+  background: #f3e8ff;
+  border-color: #d8b4fe;
+  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.15);
 }
-.feat-purple .feat-card__title { color: var(--purple-800); }
-.feat-purple .feat-card__desc { color: var(--purple-700); }
+.feat-purple .feat-card__title { color: #581c87; }
+.feat-purple .feat-card__desc { color: #7e22ce; }
 
 .feat-teal {
   background: #f0fdfa;

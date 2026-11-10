@@ -4,12 +4,12 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import './Navbar.css'
 
 const navLinks = [
-  { label: 'Home',             href: '#home',             route: '/' },
-  { label: 'Programs',         href: '#programs',         route: null },
-  { label: 'Why Wonder Roots', href: '#why-wonder-roots', route: null },
-  { label: 'Gallery',          href: null,                route: '/gallery' },
-  { label: 'Contact',          href: '#contact',          route: null },
-  { label: 'Admin',            href: null,                route: '/admin' },
+  { label: 'Home',         href: '#home',         route: '/' },
+  { label: 'Programs',     href: '#programs',     route: null },
+  { label: 'Why Nirankur', href: '#why-nirankur', route: null },
+  { label: 'Gallery',      href: null,            route: '/gallery' },
+  { label: 'Contact',      href: '#contact',      route: null },
+  { label: 'Admin',        href: null,            route: '/admin' },
 ]
 
 export default function Navbar({ scrolled }) {
@@ -77,11 +77,18 @@ export default function Navbar({ scrolled }) {
       <div className="container navbar__inner">
         {/* Logo */}
         <a className="navbar__logo" onClick={() => handleNav({ href: '#home', route: null })} href="#home">
-          <div className="navbar__logo-icon">
-            <span>🌟</span>
-          </div>
+          <img src="/logo.png" alt="Nirankur Logo" className="navbar__logo-img" />
           <div className="navbar__logo-text">
-            <span className="navbar__brand">Wonder Roots</span>
+            <span className="navbar__brand brand-rainbow">
+              <span className="c-n1">N</span>
+              <span className="c-i">i</span>
+              <span className="c-r1">r</span>
+              <span className="c-a">a</span>
+              <span className="c-n2">n</span>
+              <span className="c-k">k</span>
+              <span className="c-u">u</span>
+              <span className="c-r2">r</span>
+            </span>
             <span className="navbar__tagline">The Foundation Stage</span>
           </div>
         </a>
@@ -142,9 +149,18 @@ export default function Navbar({ scrolled }) {
             >
               <div className="navbar__drawer-header">
                 <div className="navbar__logo">
-                  <div className="navbar__logo-icon"><span>🌟</span></div>
+                  <img src="/logo.png" alt="Nirankur Logo" className="navbar__logo-img" />
                   <div className="navbar__logo-text">
-                    <span className="navbar__brand">Wonder Roots</span>
+                    <span className="navbar__brand brand-rainbow">
+                      <span className="c-n1">N</span>
+                      <span className="c-i">i</span>
+                      <span className="c-r1">r</span>
+                      <span className="c-a">a</span>
+                      <span className="c-n2">n</span>
+                      <span className="c-k">k</span>
+                      <span className="c-u">u</span>
+                      <span className="c-r2">r</span>
+                    </span>
                     <span className="navbar__tagline">The Foundation Stage</span>
                   </div>
                 </div>
