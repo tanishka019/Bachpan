@@ -1,83 +1,14 @@
 /* ====================================================================
-   CONTACT & LOCATION SECTION — Cheerful, Colorful Preschool Theme
-   Matches Nirankur Hero Rainbow, Programs Cards & Warm Ivory Canvas
+   CONTACT & LOCATION SECTION — Pure Solid Preschool Colors (Zero Gradients)
+   Sits seamlessly over unified #fdfbf4 canvas with flowing Rainbow behind
    ==================================================================== */
 
 .fc-section {
   position: relative;
-  background: #fdfbf4;
-  padding: 64px 0 96px;
+  background: transparent;
+  padding: 55px 0 96px;
   overflow: hidden;
-  border-top: 2px dashed rgba(245, 158, 11, 0.22);
-}
-
-/* ── Cheerful Ambient Pastel Blobs ── */
-.fc-bg-blobs {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.fc-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(70px);
-}
-
-.fc-blob--sky {
-  width: 380px;
-  height: 380px;
-  background: rgba(56, 189, 248, 0.16);
-  top: -80px;
-  left: -90px;
-}
-
-.fc-blob--amber {
-  width: 420px;
-  height: 420px;
-  background: rgba(251, 191, 36, 0.16);
-  top: 40px;
-  right: -120px;
-}
-
-.fc-blob--green {
-  width: 360px;
-  height: 360px;
-  background: rgba(74, 222, 128, 0.14);
-  bottom: -90px;
-  left: 15%;
-}
-
-.fc-blob--rose {
-  width: 340px;
-  height: 340px;
-  background: rgba(251, 113, 133, 0.14);
-  bottom: -60px;
-  right: 8%;
-}
-
-/* ── Faint Background Watermark (Matches About, Programs & GalleryTeaser) ── */
-.fc-watermark {
-  position: absolute;
-  top: 14px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  text-align: center;
-  pointer-events: none;
-  user-select: none;
-  z-index: 0;
-}
-
-.fc-watermark span {
-  font-family: var(--font-heading, 'Poppins', sans-serif);
-  font-size: clamp(3rem, 7.5vw, 6rem);
-  font-weight: 900;
-  color: rgba(234, 88, 12, 0.065);
-  letter-spacing: 5px;
-  white-space: nowrap;
+  z-index: 2;
 }
 
 .fc-container {
@@ -85,59 +16,66 @@
   max-width: 1160px;
   margin: 0 auto;
   padding: 0 24px;
-  z-index: 1;
+  z-index: 4;
 }
 
-/* ── Section Header ── */
+/* ── Section Header with Die-Cut Storybook Sticker Halo Over Rainbow ── */
 .fc-header {
   text-align: center;
-  margin-bottom: 44px;
+  margin: 0 auto 40px;
+  background: transparent;
+  max-width: 780px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
 }
 
-.fc-header-badge {
+.fc-header-row {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 7px 18px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #e0f2fe 0%, #dcfce7 50%, #fef3c7 100%);
-  border: 1.5px solid #fde68a;
-  color: #b45309;
-  font-family: var(--font-heading, 'Poppins', sans-serif);
-  font-size: 0.8rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.7px;
-  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.12);
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.fc-kids-banner {
+  width: 165px;
+  height: 98px;
+  flex-shrink: 0;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 0 #fdfbf4);
 }
 
 .fc-title {
   font-family: var(--font-heading, 'Poppins', sans-serif);
-  font-size: clamp(2.1rem, 4vw, 3rem);
+  font-size: clamp(2.1rem, 4vw, 2.9rem);
   font-weight: 900;
   color: #1e293b;
-  line-height: 1.18;
+  line-height: 1.26;
   margin: 0;
+  paint-order: stroke fill;
+  -webkit-text-stroke: 10px #fdfbf4;
+  filter: drop-shadow(0 3px 0 rgba(30, 41, 59, 0.14));
 }
 
 .fc-title-highlight {
-  background: linear-gradient(135deg, #ea580c 0%, #f59e0b 45%, #ec4899 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ea580c;
 }
 
 .fc-subtitle {
   font-family: var(--font-body, 'Nunito', sans-serif);
-  font-size: 1.04rem;
-  color: #475569;
-  max-width: 590px;
-  margin: 2px auto 0;
-  line-height: 1.6;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #334155;
+  max-width: 600px;
+  margin: 4px auto 0;
+  line-height: 1.55;
+  background: #ffffff;
+  border: 2px solid #bae6fd;
+  border-radius: 20px;
+  padding: 10px 24px;
+  box-shadow: 0 4px 0 #e0f2fe;
 }
 
 /* ── Two-Column Centered Grid ── */
@@ -152,12 +90,9 @@
   background: #ffffff;
   border-radius: 26px;
   overflow: hidden;
-  box-shadow:
-    0 6px 18px rgba(0, 0, 0, 0.04),
-    0 20px 44px -14px rgba(14, 165, 233, 0.16);
 }
 
-/* ── Left Column: Colorful Location Card + Pastel Contact Tiles ── */
+/* ── Left Column: Solid Location Card + Solid Pastel Contact Tiles ── */
 .fc-location-col {
   display: flex;
   flex-direction: column;
@@ -165,14 +100,16 @@
 }
 
 .fc-address-card {
-  border: 2px solid #bae6fd;
+  border: 3px solid #38bdf8;
+  box-shadow: 0 7px 0 #bae6fd;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
 .fc-address-banner {
-  background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 55%, #22c55e 100%);
+  background: #0ea5e9;
+  border-bottom: 3px solid #0284c7;
   padding: 20px 24px;
   display: flex;
   align-items: center;
@@ -184,14 +121,13 @@
   width: 46px;
   height: 46px;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.22);
-  border: 1.5px solid rgba(255, 255, 255, 0.45);
-  color: #ffffff;
+  background: #ffffff;
+  color: #0284c7;
+  border: 2px solid #bae6fd;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .fc-address-text {
@@ -203,7 +139,7 @@
 .fc-address-kicker {
   font-family: var(--font-heading, 'Poppins', sans-serif);
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.9px;
   color: #fef08a;
@@ -248,8 +184,8 @@
   width: fit-content;
   padding: 5px 12px;
   border-radius: 999px;
-  background: #f0fdf4;
-  border: 1px solid #bbf7d0;
+  background: #dcfce7;
+  border: 1.5px solid #4ade80;
   color: #15803d;
   font-family: var(--font-body, 'Nunito', sans-serif);
   font-size: 0.8rem;
@@ -262,7 +198,7 @@
   flex: 1;
   border-radius: 18px;
   overflow: hidden;
-  border: 2px solid #bae6fd;
+  border: 2.5px solid #7dd3fc;
   background: #e0f2fe;
 }
 
@@ -294,21 +230,22 @@
   gap: 6px;
   padding: 8px 16px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  background: #0ea5e9;
+  border: 2px solid #0284c7;
   color: #ffffff;
   font-family: var(--font-heading, 'Poppins', sans-serif);
   font-size: 0.78rem;
-  font-weight: 700;
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-weight: 800;
+  box-shadow: 0 3px 0 #0284c7;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .fc-directions-link:hover {
+  background: #0284c7;
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.38);
 }
 
-/* Vibrant Pastel Contact Quick Tiles */
+/* Vibrant Solid Pastel Contact Quick Tiles */
 .fc-quick-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -321,7 +258,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  transition: transform 0.2s ease;
 }
 
 a.fc-quick-item:hover {
@@ -329,21 +266,21 @@ a.fc-quick-item:hover {
 }
 
 .fc-quick-item--amber {
-  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-  border: 1.5px solid #fcd34d;
-  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.1);
+  background: #fef3c7;
+  border: 2px solid #fbbf24;
+  box-shadow: 0 4px 0 #fde68a;
 }
 
 .fc-quick-item--green {
-  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-  border: 1.5px solid #86efac;
-  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.1);
+  background: #dcfce7;
+  border: 2px solid #4ade80;
+  box-shadow: 0 4px 0 #bbf7d0;
 }
 
 .fc-quick-item--rose {
-  background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
-  border: 1.5px solid #fda4af;
-  box-shadow: 0 4px 12px rgba(244, 63, 94, 0.1);
+  background: #ffe4e6;
+  border: 2px solid #fb7185;
+  box-shadow: 0 4px 0 #fecdd3;
 }
 
 .fc-quick-item--full {
@@ -361,17 +298,9 @@ a.fc-quick-item:hover {
   color: #ffffff;
 }
 
-.fc-quick-icon--amber {
-  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
-}
-
-.fc-quick-icon--green {
-  background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
-}
-
-.fc-quick-icon--rose {
-  background: linear-gradient(135deg, #fb7185 0%, #e11d48 100%);
-}
+.fc-quick-icon--amber { background: #f59e0b; }
+.fc-quick-icon--green { background: #16a34a; }
+.fc-quick-icon--rose  { background: #e11d48; }
 
 .fc-quick-label {
   display: block;
@@ -392,28 +321,20 @@ a.fc-quick-item:hover {
   word-break: break-word;
 }
 
-/* ── Right Column: Colorful Send a Message Form ── */
+/* ── Right Column: Solid Colorful Send a Message Form ── */
 .fc-form-card {
-  border: 2px solid #fed7aa;
+  border: 3px solid #fb923c;
+  box-shadow: 0 7px 0 #fed7aa;
   display: flex;
   flex-direction: column;
-  box-shadow:
-    0 6px 18px rgba(0, 0, 0, 0.04),
-    0 20px 44px -14px rgba(249, 115, 22, 0.16);
 }
 
-.fc-rainbow-bar {
+/* Crisp 6 Solid Color Toy-Block Strip (Zero Gradient!) */
+.fc-rainbow-blocks {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   width: 100%;
-  height: 7px;
-  background: linear-gradient(
-    90deg,
-    #ed1c24 0%,
-    #f97316 20%,
-    #f59e0b 40%,
-    #22c55e 60%,
-    #0ea5e9 80%,
-    #a855f7 100%
-  );
+  height: 8px;
 }
 
 .fc-form-inner {
@@ -431,8 +352,8 @@ a.fc-quick-item:hover {
 }
 
 .fc-form-hero {
-  background: linear-gradient(135deg, #fff7ed 0%, #fefce8 55%, #f0fdf4 100%);
-  border: 1.5px solid #fde68a;
+  background: #fffbeb;
+  border: 2px solid #fde68a;
   border-radius: 18px;
   padding: 16px 20px;
   display: flex;
@@ -444,9 +365,9 @@ a.fc-quick-item:hover {
   display: inline-flex;
   align-items: center;
   width: fit-content;
-  padding: 3px 11px;
+  padding: 4px 12px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  background: #ea580c;
   color: #ffffff;
   font-family: var(--font-heading, 'Poppins', sans-serif);
   font-size: 0.7rem;
@@ -474,18 +395,8 @@ a.fc-quick-item:hover {
   width: 100%;
   height: 4px;
   border-radius: 999px;
-  background: repeating-linear-gradient(
-    90deg,
-    #f97316 0 6px,
-    transparent 6px 12px,
-    #22c55e 12px 18px,
-    transparent 18px 24px,
-    #0ea5e9 24px 30px,
-    transparent 30px 36px,
-    #ec4899 36px 42px,
-    transparent 42px 48px
-  );
-  opacity: 0.55;
+  border-top: 3px dashed #fbbf24;
+  opacity: 0.7;
 }
 
 .fc-form-row {
@@ -516,14 +427,14 @@ a.fc-quick-item:hover {
 .fc-input {
   width: 100%;
   background: #fffdf7;
-  border: 1.5px solid #fde68a;
+  border: 2px solid #fde68a;
   border-radius: 13px;
   padding: 11px 14px;
   font-family: var(--font-body, 'Nunito', sans-serif);
   font-size: 0.93rem;
   font-weight: 600;
   color: #1e293b;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition: border-color 0.2s ease, background 0.2s ease;
   outline: none;
 }
 
@@ -535,7 +446,6 @@ a.fc-quick-item:hover {
 .fc-input:focus {
   background: #ffffff;
   border-color: #f97316;
-  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.16);
 }
 
 .fc-input--error {
@@ -545,7 +455,6 @@ a.fc-quick-item:hover {
 
 .fc-input--error:focus {
   border-color: #ef4444;
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.14);
 }
 
 .fc-error-msg {
@@ -554,7 +463,7 @@ a.fc-quick-item:hover {
   color: #dc2626;
 }
 
-/* Colorful Program / Topic Chips */
+/* Solid Colorful Program / Topic Chips */
 .fc-topic-chips {
   display: flex;
   flex-wrap: wrap;
@@ -571,73 +480,27 @@ a.fc-quick-item:hover {
   font-size: 0.78rem;
   font-weight: 700;
   cursor: pointer;
-  border: 1.5px solid transparent;
-  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  transition: transform 0.18s ease, background 0.18s ease;
 }
 
-.fc-topic-chip--blue {
-  background: #e0f2fe;
-  color: #0369a1;
-  border-color: #bae6fd;
-}
-.fc-topic-chip--blue.is-active {
-  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
-  color: #ffffff;
-  border-color: #0284c7;
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.28);
-}
+.fc-topic-chip--blue   { background: #e0f2fe; color: #0369a1; border-color: #7dd3fc; }
+.fc-topic-chip--blue.is-active { background: #0ea5e9; color: #ffffff; border-color: #0284c7; box-shadow: 0 3px 0 #0284c7; }
 
-.fc-topic-chip--green {
-  background: #dcfce7;
-  color: #15803d;
-  border-color: #bbf7d0;
-}
-.fc-topic-chip--green.is-active {
-  background: linear-gradient(135deg, #4ade80 0%, #16a34a 100%);
-  color: #ffffff;
-  border-color: #16a34a;
-  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.28);
-}
+.fc-topic-chip--green  { background: #dcfce7; color: #15803d; border-color: #86efac; }
+.fc-topic-chip--green.is-active { background: #22c55e; color: #ffffff; border-color: #16a34a; box-shadow: 0 3px 0 #16a34a; }
 
-.fc-topic-chip--coral {
-  background: #ffe4e6;
-  color: #be123c;
-  border-color: #fecdd3;
-}
-.fc-topic-chip--coral.is-active {
-  background: linear-gradient(135deg, #fb7185 0%, #e11d48 100%);
-  color: #ffffff;
-  border-color: #e11d48;
-  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.28);
-}
+.fc-topic-chip--coral  { background: #ffe4e6; color: #be123c; border-color: #fda4af; }
+.fc-topic-chip--coral.is-active { background: #f43f5e; color: #ffffff; border-color: #e11d48; box-shadow: 0 3px 0 #e11d48; }
 
-.fc-topic-chip--amber {
-  background: #fef3c7;
-  color: #b45309;
-  border-color: #fde68a;
-}
-.fc-topic-chip--amber.is-active {
-  background: linear-gradient(135deg, #fbbf24 0%, #ea580c 100%);
-  color: #ffffff;
-  border-color: #ea580c;
-  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.28);
-}
+.fc-topic-chip--amber  { background: #fef3c7; color: #b45309; border-color: #fcd34d; }
+.fc-topic-chip--amber.is-active { background: #f59e0b; color: #ffffff; border-color: #d97706; box-shadow: 0 3px 0 #d97706; }
 
-.fc-topic-chip--purple {
-  background: #f3e8ff;
-  color: #7e22ce;
-  border-color: #e9d5ff;
-}
-.fc-topic-chip--purple.is-active {
-  background: linear-gradient(135deg, #c084fc 0%, #9333ea 100%);
-  color: #ffffff;
-  border-color: #9333ea;
-  box-shadow: 0 4px 12px rgba(147, 51, 234, 0.28);
-}
+.fc-topic-chip--purple { background: #f3e8ff; color: #7e22ce; border-color: #d8b4fe; }
+.fc-topic-chip--purple.is-active { background: #a855f7; color: #ffffff; border-color: #7e22ce; box-shadow: 0 3px 0 #7e22ce; }
 
 .fc-topic-chip:hover:not(.is-active) {
-  transform: translateY(-1px);
-  filter: brightness(0.97);
+  transform: translateY(-2px);
 }
 
 .fc-textarea {
@@ -662,20 +525,21 @@ a.fc-quick-item:hover {
   gap: 9px;
   padding: 13px 32px;
   border-radius: 999px;
-  border: none;
-  background: linear-gradient(135deg, #f97316 0%, #ea580c 55%, #e11d48 100%);
+  border: 2px solid #ffffff;
+  background: #ea580c;
   color: #ffffff;
   font-family: var(--font-heading, 'Poppins', sans-serif);
   font-size: 0.95rem;
   font-weight: 800;
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(234, 88, 12, 0.32);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 5px 0 #c2410c;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .fc-submit-btn:hover {
+  background: #f97316;
   transform: translateY(-2px);
-  box-shadow: 0 12px 26px rgba(234, 88, 12, 0.42);
+  box-shadow: 0 7px 0 #c2410c;
 }
 
 .fc-submit-btn--secondary {
@@ -703,12 +567,12 @@ a.fc-quick-item:hover {
   width: 68px;
   height: 68px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #4ade80 0%, #16a34a 100%);
+  background: #16a34a;
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 20px rgba(22, 163, 74, 0.28);
+  box-shadow: 0 5px 0 #15803d;
 }
 
 .fc-success-title {
@@ -735,8 +599,8 @@ a.fc-quick-item:hover {
   font-size: 0.82rem;
   font-weight: 700;
   color: #b45309;
-  background: #fffbeb;
-  border: 1.5px solid #fde68a;
+  background: #fef3c7;
+  border: 2px solid #fbbf24;
   padding: 8px 18px;
   border-radius: 999px;
 }

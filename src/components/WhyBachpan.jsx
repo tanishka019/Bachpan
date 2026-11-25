@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { AboutPlayKids } from './StoryKids'
 import './WhyBachpan.css'
 
 export default function WhyNirankur() {
@@ -14,11 +15,6 @@ export default function WhyNirankur() {
     <section className="about-school" id="why-nirankur" ref={ref}>
       <span id="why-wonder-roots" style={{ position: 'relative', top: '-100px', visibility: 'hidden' }} />
       <span id="why-bachpan" style={{ position: 'relative', top: '-100px', visibility: 'hidden' }} />
-
-      {/* Huge Faint Watermark Text matching reference image */}
-      <div className="about-school__watermark">
-        <span>ABOUT OUR SCHOOL</span>
-      </div>
 
       <div className="container about-school__container">
         {/* Title */}
@@ -55,6 +51,7 @@ export default function WhyNirankur() {
               <button className="btn btn-primary about-school__btn" onClick={handleEnroll}>
                 Read More
               </button>
+              <AboutPlayKids className="about-school__kids-deco" />
             </div>
           </motion.div>
 

@@ -78,9 +78,9 @@ function Lightbox({ items, index, onClose, onPrev, onNext }) {
         <div className="lb__caption">
           <div className="lb__caption-left">
             <div className="lb__caption-tags">
-              <span className="lb__date-badge">📅 {dateInfo?.fullDate}</span>
+              <span className="lb__date-badge">{dateInfo?.fullDate}</span>
               <span className="lb__category-badge">{current.category}</span>
-              {current.location && <span className="lb__loc-badge">📍 {current.location}</span>}
+              {current.location && <span className="lb__loc-badge">{current.location}</span>}
             </div>
             <h3 className="lb__caption-title">{current.title}</h3>
             {current.caption && <p className="lb__caption-desc">{current.caption}</p>}
@@ -93,7 +93,7 @@ function Lightbox({ items, index, onClose, onPrev, onNext }) {
               rel="noreferrer"
               className="lb__action-btn"
             >
-              ↗ Open Media
+              Open Media
             </a>
           </div>
         </div>
@@ -236,7 +236,7 @@ export default function GalleryPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="section-badge">📸 Life at Nirankur</span>
+              <span className="section-badge">Life at Nirankur</span>
               <h1 className="section-title">
                 Moments of <span>Joy & Growth</span>
               </h1>
@@ -282,7 +282,7 @@ export default function GalleryPage() {
                     className={`bp-cal-trigger ${showCalendar || selectedDate ? 'active' : ''}`}
                     onClick={() => setShowCalendar(!showCalendar)}
                   >
-                    <span className="bp-cal-icon">📅</span>
+                    <span className="bp-cal-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2" /><line x1="16" x2="16" y1="2" y2="6" /><line x1="8" x2="8" y1="2" y2="6" /><line x1="3" x2="21" y1="10" y2="10" /></svg></span>
                     <span>{selectedDate ? `Date: ${selectedDate}` : 'Calendar Filter'}</span>
                     <span className="bp-cal-arrow">{showCalendar ? '▲' : '▼'}</span>
                   </button>
@@ -310,7 +310,7 @@ export default function GalleryPage() {
                   onClick={() => navigate('/admin')}
                   title="Open Admin Portal to add/edit photos or view form leads"
                 >
-                  <span className="bp-admin-portal-icon">⚡</span>
+                  <span className="bp-admin-portal-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z" /></svg></span>
                   <span>Admin Portal</span>
                 </button>
               </div>
@@ -319,7 +319,7 @@ export default function GalleryPage() {
               {selectedDate && (
                 <div className="bp-active-date">
                   <div className="bp-active-date__text">
-                    <span>📅 Filtered by Date: <strong>{formatDateDetails(selectedDate).fullDate}</strong></span>
+                    <span>Filtered by Date: <strong>{formatDateDetails(selectedDate).fullDate}</strong></span>
                     <span className="bp-active-date__count">({filteredMemories.length} item{filteredMemories.length === 1 ? '' : 's'})</span>
                   </div>
                   <button
@@ -345,18 +345,18 @@ export default function GalleryPage() {
                     className={`bp-type-btn ${selectedMediaType === 'Photos' ? 'active' : ''}`}
                     onClick={() => setSelectedMediaType('Photos')}
                   >
-                    📷 Photos ({counts.photos})
+                    Photos ({counts.photos})
                   </button>
                   <button
                     className={`bp-type-btn ${selectedMediaType === 'Videos' ? 'active' : ''}`}
                     onClick={() => setSelectedMediaType('Videos')}
                   >
-                    🎬 Videos ({counts.videos})
+                    Videos ({counts.videos})
                   </button>
                 </div>
 
                 <div className="bp-search-wrap">
-                  <span className="bp-search-ico">🔍</span>
+                  <span className="bp-search-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg></span>
                   <input
                     type="text"
                     placeholder="Search by activity, festival, learning topic..."
@@ -383,7 +383,7 @@ export default function GalleryPage() {
         <section className="container bp-timeline-feed">
           {groupedMonths.length === 0 ? (
             <div className="bp-empty">
-              <div className="bp-empty__icon">🎨</div>
+              <div className="bp-empty__icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" ry="2" /><circle cx="9" cy="9" r="2" /><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" /></svg></div>
               <h3>No moments found</h3>
               <p>No photos or videos match your selected date, month, or search keywords.</p>
               <button
@@ -404,7 +404,7 @@ export default function GalleryPage() {
                 {/* Month Heading */}
                 <div className="bp-month-bar">
                   <div className="bp-month-tag">
-                    <span className="bp-month-tag__icon">📅</span>
+                    <span className="bp-month-tag__icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2" /><line x1="16" x2="16" y1="2" y2="6" /><line x1="8" x2="8" y1="2" y2="6" /><line x1="3" x2="21" y1="10" y2="10" /></svg></span>
                     <h2 className="bp-month-tag__title">{group.monthLabel}</h2>
                     <span className="bp-month-tag__count">
                       {group.items.length} {group.items.length === 1 ? 'Memory' : 'Memories'}
@@ -448,10 +448,10 @@ export default function GalleryPage() {
                                   className="bp-media-el"
                                 />
                                 <div className="bp-play-circle">
-                                  <span>▶</span>
+                                  <span><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" /></svg></span>
                                 </div>
                                 <span className="bp-media-badge bp-media-badge--video">
-                                  🎬 Video Memory
+                                  Video Memory
                                 </span>
                               </div>
                             ) : (
@@ -462,12 +462,12 @@ export default function GalleryPage() {
                                   loading="lazy"
                                   className="bp-media-el"
                                 />
-                                <span className="bp-media-badge">📷 Photo</span>
+                                <span className="bp-media-badge">Photo</span>
                               </div>
                             )}
 
                             <div className="bp-media-overlay-hint">
-                              <span>🔍 View Full</span>
+                              <span>View Full</span>
                             </div>
                           </div>
 
@@ -476,7 +476,7 @@ export default function GalleryPage() {
                             <div className="bp-card-meta">
                               <span className="bp-cat-badge">{item.category}</span>
                               {item.location && (
-                                <span className="bp-loc-text">📍 {item.location}</span>
+                                <span className="bp-loc-text">{item.location}</span>
                               )}
                             </div>
 

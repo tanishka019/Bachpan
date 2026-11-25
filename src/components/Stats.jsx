@@ -3,10 +3,10 @@ import { motion, useInView } from 'framer-motion'
 import './Stats.css'
 
 const stats = [
-  { value: 500, suffix: '+', label: 'Learning Centers', icon: '🏫', color: '#fbbf24' },
-  { value: 50000, suffix: '+', label: 'Happy Children', icon: '😊', format: '50K+', color: '#fb7185' },
-  { value: 15, suffix: '+', label: 'Years of Excellence', icon: '🏆', color: '#38bdf8' },
-  { value: 200, suffix: '+', label: 'Cities Across India', icon: '🌍', color: '#4ade80' },
+  { value: 500, suffix: '+', label: 'Learning Centers', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M14 22v-4a2 2 0 1 0-4 0v4" /><path d="m18 10 4 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8l4-2" /><path d="M18 5v17" /><path d="m4 6 8-4 8 4" /><path d="M6 5v17" /></svg>, color: '#fbbf24' },
+  { value: 50000, suffix: '+', label: 'Happy Children', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M8 14s1.5 2 4 2 4-2 4-2" /><line x1="9" x2="9.01" y1="9" y2="9" /><line x1="15" x2="15.01" y1="9" y2="9" /></svg>, format: '50K+', color: '#fb7185' },
+  { value: 15, suffix: '+', label: 'Years of Excellence', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6" /><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" /></svg>, color: '#38bdf8' },
+  { value: 200, suffix: '+', label: 'Cities Across India', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></svg>, color: '#4ade80' },
 ]
 
 function CountUp({ target, suffix, format, start }) {

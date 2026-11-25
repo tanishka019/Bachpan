@@ -175,7 +175,7 @@ export default function UploadModal({ isOpen, onClose, onSuccess, onOpenConfig }
         {/* Warning if Supabase is not configured */}
         {!configured && (
           <div className="upload-warning">
-            <span className="upload-warning__icon">⚠️</span>
+            <span className="upload-warning__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" /><path d="M12 9v4" /><path d="M12 17h.01" /></svg></span>
             <div className="upload-warning__text">
               <strong>Supabase credentials not configured</strong>
               <span>You need to connect your Supabase project URL and anon key to upload.</span>
@@ -212,7 +212,7 @@ export default function UploadModal({ isOpen, onClose, onSuccess, onOpenConfig }
                 style={{ display: 'none' }}
                 onChange={(e) => e.target.files?.[0] && handleFileSelection(e.target.files[0])}
               />
-              <div className="dropzone__icon">📸 🎬</div>
+              <div className="dropzone__icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" ry="2" /><circle cx="9" cy="9" r="2" /><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" /></svg></div>
               <div className="dropzone__text">
                 <strong>Click to browse</strong> or drag & drop media here
               </div>
@@ -234,7 +234,7 @@ export default function UploadModal({ isOpen, onClose, onSuccess, onOpenConfig }
                   />
                 )}
                 <span className="preview-badge">
-                  {mediaType === 'image' ? '📷 Photo' : '🎬 Video'}
+                  {mediaType === 'image' ? 'Photo' : 'Video'}
                 </span>
               </div>
 
@@ -312,7 +312,7 @@ export default function UploadModal({ isOpen, onClose, onSuccess, onOpenConfig }
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
               >
-                <span>⚠️ {error}</span>
+                <span>{error}</span>
               </motion.div>
             )}
 
@@ -323,7 +323,7 @@ export default function UploadModal({ isOpen, onClose, onSuccess, onOpenConfig }
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
               >
-                <span>✅ Uploaded to Supabase successfully!</span>
+                <span>Uploaded to Supabase successfully!</span>
               </motion.div>
             )}
           </AnimatePresence>
@@ -359,7 +359,7 @@ export default function UploadModal({ isOpen, onClose, onSuccess, onOpenConfig }
               className="btn btn-primary"
               disabled={!file || !title.trim() || uploading}
             >
-              {uploading ? 'Uploading to Supabase...' : 'Upload Media 🚀'}
+              {uploading ? 'Uploading to Supabase...' : 'Upload Media'}
             </button>
           </div>
         </form>

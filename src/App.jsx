@@ -7,6 +7,7 @@ import WhyNirankur from './components/WhyBachpan'
 import GalleryTeaser from './components/GalleryTeaser'
 import Testimonials from './components/Testimonials'
 import FindCenter from './components/FindCenter'
+import RainbowStream from './components/RainbowStream'
 import Footer from './components/Footer'
 import GalleryPage from './pages/GalleryPage'
 import AdminPage from './pages/AdminPage'
@@ -24,11 +25,17 @@ function HomePage() {
       <Navbar scrolled={scrolled} />
       <main>
         <Hero />
-        <WhyNirankur />
-        <Programs />
-        <GalleryTeaser />
-        <Testimonials />
-        <FindCenter />
+        <div
+          className="homepage-below-hero"
+          style={{ position: 'relative', background: '#fdfbf4', overflowX: 'clip', marginTop: '-2px', zIndex: 5 }}
+        >
+          <RainbowStream />
+          <WhyNirankur />
+          <Programs />
+          <GalleryTeaser />
+          <Testimonials />
+          <FindCenter />
+        </div>
       </main>
       <Footer />
     </>

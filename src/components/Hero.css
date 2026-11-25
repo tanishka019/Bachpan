@@ -1,5 +1,6 @@
 /* ====================================================================
-   HERO STORYBOOK SECTION — Continuous Illustrated Storybook Theme
+   HERO STORYBOOK SECTION — Centered Headline + Moving Rainbow + Kids
+   Zero CSS gradients — clean solid storybook illustration palette
    ==================================================================== */
 
 .hero-storybook {
@@ -8,10 +9,10 @@
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  background: #171b24; /* Deep whimsical night sky */
+  justify-content: center;
+  background: #171b24;
   overflow: hidden;
-  padding-top: 105px;
+  padding-top: 84px;
 }
 
 /* ── Twinkling Night Sky & Stars ── */
@@ -31,46 +32,89 @@
 .star-1 { top: 18%; left: 14%; font-size: 1.1rem; color: #fde047; animation: sbTwinkle 3s ease-in-out infinite; }
 .star-2 { top: 22%; left: 28%; font-size: 1.4rem; color: #ffffff; animation: sbTwinkle 4s ease-in-out infinite 0.5s; }
 .star-3 { top: 14%; left: 45%; font-size: 0.9rem; color: #fbcfe8; animation: sbTwinkle 3.5s ease-in-out infinite 1s; }
-.star-4 { top: 28%; left: 62%; font-size: 1.2rem; color: #fde047; animation: sbTwinkle 4.5s ease-in-out infinite 1.5s; }
-.star-5 { top: 12%; right: 24%; font-size: 1.3rem; color: #38bdf8; animation: sbTwinkle 3.2s ease-in-out infinite 0.8s; }
-.star-6 { top: 24%; right: 12%; font-size: 1.1rem; color: #ffffff; animation: sbTwinkle 4s ease-in-out infinite 1.2s; }
-.star-7 { top: 40%; left: 8%; font-size: 1.2rem; color: #fde047; animation: sbTwinkle 3.8s ease-in-out infinite 0.3s; }
-.star-8 { top: 44%; right: 35%; font-size: 0.85rem; color: #fbcfe8; animation: sbTwinkle 3.3s ease-in-out infinite 1.8s; }
+.star-4 { top: 26%; left: 66%; font-size: 1.2rem; color: #fde047; animation: sbTwinkle 4.5s ease-in-out infinite 1.5s; }
+.star-5 { top: 13%; right: 20%; font-size: 1.3rem; color: #38bdf8; animation: sbTwinkle 3.2s ease-in-out infinite 0.8s; }
+.star-6 { top: 24%; right: 10%; font-size: 1.1rem; color: #ffffff; animation: sbTwinkle 4s ease-in-out infinite 1.2s; }
+.star-7 { top: 42%; left: 8%; font-size: 1.2rem; color: #fde047; animation: sbTwinkle 3.8s ease-in-out infinite 0.3s; }
+.star-8 { top: 44%; right: 18%; font-size: 0.85rem; color: #fbcfe8; animation: sbTwinkle 3.3s ease-in-out infinite 1.8s; }
 
 @keyframes sbTwinkle {
-  0%, 100% { opacity: 0.3; transform: scale(0.85); }
+  0%, 100% { opacity: 0.35; transform: scale(0.85); }
   50% { opacity: 1; transform: scale(1.15); }
 }
 
-/* ── Playful Floating Clouds ── */
+/* ── Playful Floating & Horizontally Drifting Clouds ── */
 .sb-cloud {
   position: absolute;
   pointer-events: none;
   user-select: none;
+  will-change: transform;
 }
 
 .cloud-1 {
-  top: 18%;
-  right: -20px;
-  width: 140px;
-  animation: float 6s ease-in-out infinite;
+  top: 14%;
+  left: calc(100% + 40px);
+  width: 200px;
+  animation: heroCloudGlideRTL 42s linear infinite -11s;
 }
 
 .cloud-2 {
-  top: 32%;
-  left: -20px;
-  width: 130px;
-  animation: floatReverse 7s ease-in-out infinite 1s;
+  top: 28%;
+  left: -240px;
+  width: 190px;
+  animation: heroCloudGlideLTR 48s linear infinite -20s;
 }
 
-/* ── Organic Swoop Canvas (Splits Night Sky & Cream Ground) ── */
+.cloud-3 {
+  top: 48%;
+  left: calc(100% + 40px);
+  width: 180px;
+  opacity: 0.92;
+  animation: heroCloudGlideRTL 54s linear infinite -32s;
+}
+
+.cloud-4 {
+  top: 9%;
+  left: -240px;
+  width: 165px;
+  opacity: 0.88;
+  animation: heroCloudGlideLTR 38s linear infinite -14s;
+}
+
+.hero-sb__rainbow-cloud-start {
+  position: absolute;
+  top: 10%;
+  left: -40px;
+  width: 215px;
+  z-index: 4;
+  animation: heroAnchorCloudSway 8s ease-in-out infinite;
+}
+
+@keyframes heroCloudGlideLTR {
+  0% { transform: translate3d(0, 0px, 0); }
+  50% { transform: translate3d(calc(50vw + 260px), -8px, 0); }
+  100% { transform: translate3d(calc(100vw + 520px), 0px, 0); }
+}
+
+@keyframes heroCloudGlideRTL {
+  0% { transform: translate3d(0, 0px, 0); }
+  50% { transform: translate3d(calc(-50vw - 160px), 8px, 0); }
+  100% { transform: translate3d(calc(-100vw - 360px), 0px, 0); }
+}
+
+@keyframes heroAnchorCloudSway {
+  0%, 100% { transform: translate3d(0px, 0px, 0); }
+  50% { transform: translate3d(14px, -5px, 0); }
+}
+
+/* ── Organic Swoop Canvas (Splits Night Sky & Cream Ground below Hero Center) ── */
 .hero-sb__ground-wrap {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   width: 100%;
-  height: 480px;
+  height: 310px;
   z-index: 2;
   pointer-events: none;
 }
@@ -81,7 +125,7 @@
   display: block;
 }
 
-/* ── Continuous Sweeping Ribbon Stream ── */
+/* ── Continuous Sweeping Moving Rainbow Stream ── */
 .hero-sb__ribbon-wrap {
   position: absolute;
   inset: 0;
@@ -91,26 +135,61 @@
   pointer-events: none;
 }
 
-.hero-sb__ribbon-wrap svg {
+.hero-sb__ribbon-svg {
   width: 100%;
   height: 100%;
   display: block;
 }
 
+.hero-sb__ribbon-streak {
+  opacity: 0.55;
+  animation: heroDashFlow 3.4s linear infinite;
+}
+
+/* Crisp 1:1 Aspect-Ratio Child Sliding Right Along the Hero Rainbow */
+.hero-sb__slide-kid {
+  position: absolute;
+  width: 88px;
+  height: 80px;
+  pointer-events: none;
+  z-index: 5;
+  will-change: transform, left, top, opacity;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.28));
+}
+
+.hero-sb__slide-kid svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@keyframes heroDashFlow {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -254;
+  }
+}
+
+@keyframes heroRibbonSway {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
 /* Paper Airplane */
 .hero-sb__plane {
   position: absolute;
-  top: 19%;
-  left: 28%;
-  width: 76px;
+  top: 13%;
+  left: 8%;
+  width: 72px;
   animation: planeGlide 4.5s ease-in-out infinite;
   transform-origin: center;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.4));
 }
 
 @keyframes planeGlide {
   0%, 100% { transform: translateY(0px) rotate(-8deg); }
-  50% { transform: translateY(-14px) rotate(-1deg); }
+  50% { transform: translateY(-12px) rotate(-1deg); }
 }
 
 /* Stardust Sparkles along Ribbon */
@@ -119,69 +198,67 @@
   pointer-events: none;
   font-size: 1.15rem;
   color: #fef08a;
-  text-shadow: 0 0 10px rgba(254, 240, 138, 0.8);
   animation: stardustTwinkle 3s ease-in-out infinite;
 }
 
-.dust-1 { top: 21%; left: 38%; animation-delay: 0s; font-size: 1.3rem; }
-.dust-2 { top: 32%; left: 54%; animation-delay: 0.8s; font-size: 1rem; color: #67e8f9; }
-.dust-3 { top: 38%; left: 70%; animation-delay: 1.6s; font-size: 1.4rem; color: #fbcfe8; }
-.dust-4 { top: 48%; left: 82%; animation-delay: 2.2s; font-size: 1.1rem; color: #fde047; }
+.dust-1 { top: 44%; left: 17%; animation-delay: 0s; font-size: 1.3rem; }
+.dust-2 { top: 64%; left: 38%; animation-delay: 0.8s; font-size: 1.1rem; color: #38bdf8; }
+.dust-3 { top: 66%; left: 66%; animation-delay: 1.6s; font-size: 1.35rem; color: #f472b6; }
+.dust-4 { top: 58%; left: 82%; animation-delay: 2.2s; font-size: 1.15rem; color: #fde047; }
 
 @keyframes stardustTwinkle {
-  0%, 100% { opacity: 0.3; transform: scale(0.85); }
+  0%, 100% { opacity: 0.35; transform: scale(0.85); }
   50% { opacity: 1; transform: scale(1.2) rotate(15deg); }
 }
 
-/* ── Central Typography & Header ── */
+/* ── Centerpiece Block: Nirankur + Motto + Enroll Now Grouped Together in Exact Center & Middle ── */
 .hero-sb__container {
   position: relative;
   z-index: 6;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
   flex: 1;
   width: 100%;
+  padding-bottom: 170px;
 }
 
 .hero-sb__header {
-  margin-top: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  max-width: 780px;
+  margin: 0 auto;
 }
 
-/* Big, Cool, Bubbly "Nirankur" with 3D Depth */
+/* Crisp Solid 3D Block "Nirankur" Title */
 .hero-sb__title {
   font-family: var(--font-heading);
-  font-size: clamp(4.2rem, 9.5vw, 7.6rem);
+  font-size: clamp(4rem, 9vw, 7.2rem);
   font-weight: 900;
   color: #ffffff;
   line-height: 1;
   letter-spacing: -1.5px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   display: inline-flex;
   align-items: center;
-  text-shadow: 
+  text-shadow:
     0 3px 0 #94a3b8,
     0 6px 0 #475569,
-    0 9px 0 #1e293b,
-    0 12px 28px rgba(0, 0, 0, 0.6),
-    0 0 45px rgba(254, 240, 138, 0.35);
+    0 9px 0 #0f172a;
   user-select: none;
 }
 
-
-
 .hero-sb__motto {
   font-family: var(--font-body);
-  font-size: clamp(1.08rem, 1.8vw, 1.3rem);
-  color: #ffffff;
+  font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+  color: #f8fafc;
   font-weight: 600;
-  margin-bottom: 0;
-  letter-spacing: 0.4px;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  margin-bottom: 24px;
+  letter-spacing: 0.35px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -193,40 +270,37 @@
   color: #fbbf24;
 }
 
-/* Cool 3D Glowing Orange/Amber CTA Button — shifted lower onto clear open space */
+/* Crisp Solid Flat-Toy-Block Orange Button (NO gradients!) */
 .hero-sb__cta-wrap {
-  margin-top: auto;
-  margin-bottom: clamp(72px, 14vh, 145px);
   position: relative;
   z-index: 6;
 }
 
 .hero-sb__btn {
-  padding: 15px 42px;
+  padding: 15px 40px;
   font-size: 1.08rem;
   font-weight: 800;
   border-radius: var(--radius-full);
-  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  background: #f97316;
   color: #ffffff;
-  border: 2px solid rgba(255, 255, 255, 0.88);
+  border: 2px solid #ffffff;
   cursor: pointer;
-  box-shadow: 
-    0 0 0 5px rgba(249, 115, 22, 0.16),
-    0 12px 30px rgba(234, 88, 12, 0.36),
-    inset 0 1px 2px rgba(255, 255, 255, 0.45);
-  transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 6px 0 #c2410c;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   display: inline-flex;
   align-items: center;
   gap: 10px;
 }
 
 .hero-sb__btn:hover {
-  background: linear-gradient(135deg, #fb923c 0%, #ea580c 100%);
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 
-    0 0 0 6px rgba(249, 115, 22, 0.26),
-    0 16px 38px rgba(234, 88, 12, 0.5),
-    inset 0 1px 2px rgba(255, 255, 255, 0.55);
+  background: #ea580c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #9a3412;
+}
+
+.hero-sb__btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px 0 #9a3412;
 }
 
 .btn-sparkle {
@@ -235,40 +309,39 @@
 }
 
 .hero-sb__btn:hover .btn-sparkle {
-  transform: rotate(20deg) scale(1.2);
+  transform: rotate(20deg) scale(1.15);
 }
 
-/* ── Lower Ground Scene: Painter on Left, Children Reading on Right ── */
+/* ── Lower Ground Scene: Shifted Cleanly Far Left Clear of Center Motto ── */
 .hero-sb__left-scene {
   position: absolute;
-  bottom: 30px;
-  left: 20px;
+  bottom: 14px;
+  left: 16px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 320px;
-  z-index: 5;
+  max-width: 245px;
+  z-index: 7;
 }
 
 .hero-sb__blurb {
-  background: rgba(23, 27, 36, 0.55);
-  backdrop-filter: blur(8px);
-  border-radius: 16px;
-  padding: 14px 18px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  margin-bottom: 10px;
+  background: #1e293b;
+  border-radius: 14px;
+  padding: 11px 14px;
+  border: 2px solid rgba(255, 255, 255, 0.16);
+  margin-bottom: 6px;
   text-align: left;
 }
 
 .hero-sb__blurb p {
-  font-size: 0.85rem;
-  line-height: 1.55;
+  font-size: 0.78rem;
+  line-height: 1.45;
   color: #e2e8f0;
 }
 
 .hero-sb__painter {
-  width: 140px;
-  height: 220px;
+  width: 112px;
+  height: 168px;
 }
 
 .hero-sb__painter svg {
@@ -276,13 +349,30 @@
   height: 100%;
 }
 
-/* Right Scene: Glowing Book with Two Children */
+/* Extra Happy Meadow Kids on Cream Ground */
+.hero-sb__meadow-kids {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 190px;
+  height: 145px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.hero-sb__meadow-kids svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Right Scene: Open Book with Two Children */
 .hero-sb__right-scene {
   position: absolute;
-  bottom: 25px;
-  right: 40px;
-  width: 380px;
-  height: 280px;
+  bottom: 18px;
+  right: 36px;
+  width: 340px;
+  height: 250px;
   z-index: 5;
   pointer-events: none;
 }
@@ -293,51 +383,64 @@
 }
 
 /* ── Responsive Rules ── */
-@media (max-width: 1024px) {
-  .hero-sb__title {
-    font-size: 5rem;
+@media (max-width: 1080px) {
+  .hero-sb__meadow-kids {
+    display: none;
   }
   .hero-sb__right-scene {
-    width: 260px;
-    height: 195px;
+    width: 250px;
+    height: 185px;
     right: 10px;
-    bottom: 15px;
+    bottom: 12px;
   }
   .hero-sb__left-scene {
-    max-width: 230px;
+    max-width: 215px;
     left: 10px;
-    bottom: 15px;
+    bottom: 12px;
   }
   .hero-sb__plane {
-    left: 20%;
+    left: 6%;
   }
 }
 
 @media (max-width: 768px) {
   .hero-storybook {
     min-height: auto;
-    padding-bottom: 40px;
+    padding-top: 100px;
+    padding-bottom: 36px;
+  }
+
+  .hero-sb__container {
+    padding-bottom: 12px;
   }
 
   .hero-sb__title {
-    font-size: 3.8rem;
+    font-size: 3.6rem;
   }
 
   .hero-sb__motto {
     font-size: 1rem;
-    margin-bottom: 0;
+    margin-bottom: 20px;
   }
 
-  .hero-sb__cta-wrap {
-    margin-top: 28px;
-    margin-bottom: 12px;
+  .hero-sb__plane,
+  .hero-sb__slide-kid {
+    display: none;
+  }
+
+  .sb-cloud {
+    max-width: 38vw;
+  }
+
+  .hero-sb__rainbow-cloud-start {
+    width: 150px;
   }
 
   .hero-sb__left-scene {
     position: relative;
     bottom: auto;
     left: auto;
-    margin-top: 30px;
+    margin-top: 32px;
     max-width: 100%;
     align-items: center;
     text-align: center;
@@ -355,8 +458,8 @@
     position: relative;
     bottom: auto;
     right: auto;
-    margin-top: 20px;
-    width: 280px;
-    height: 210px;
+    margin-top: 18px;
+    width: 270px;
+    height: 200px;
   }
 }

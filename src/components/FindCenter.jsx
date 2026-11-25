@@ -9,9 +9,9 @@ import {
   CheckCircle2,
   ExternalLink,
   Navigation,
-  Sparkles,
 } from 'lucide-react'
 import { addLead } from '../lib/leadsData'
+import { ContactMapKids } from './StoryKids'
 import './FindCenter.css'
 
 // Sample Nirankur Preschool Campus Location — update with exact street address & coordinates when ready
@@ -30,11 +30,11 @@ const PRESCHOOL_LOCATION = {
 }
 
 const TOPIC_OPTIONS = [
-  { label: 'Playgroup', emoji: '🧸', age: '1.5–2.5 Yrs', tone: 'blue' },
-  { label: 'Nursery', emoji: '🌱', age: '2.5–3.5 Yrs', tone: 'green' },
-  { label: 'Junior KG', emoji: '🎨', age: '3.5–4.5 Yrs', tone: 'coral' },
-  { label: 'Campus Tour', emoji: '🏫', age: 'Schedule Visit', tone: 'amber' },
-  { label: 'General Enquiry', emoji: '💬', age: 'Ask Anything', tone: 'purple' },
+  { label: 'Playgroup', tone: 'blue' },
+  { label: 'Nursery', tone: 'green' },
+  { label: 'Junior KG', tone: 'coral' },
+  { label: 'Campus Tour', tone: 'amber' },
+  { label: 'General Enquiry', tone: 'purple' },
 ]
 
 const INITIAL_FORM = {
@@ -115,43 +115,30 @@ export default function FindCenter() {
 
   return (
     <section className="fc-section" id="contact" ref={ref}>
-      {/* Cheerful Pastel Background Blobs */}
-      <div className="fc-bg-blobs" aria-hidden="true">
-        <div className="fc-blob fc-blob--sky" />
-        <div className="fc-blob fc-blob--amber" />
-        <div className="fc-blob fc-blob--green" />
-        <div className="fc-blob fc-blob--rose" />
-      </div>
-
-      {/* Faint Watermark Title matching Storybook Sections */}
-      <div className="fc-watermark" aria-hidden="true">
-        <span>VISIT &amp; CONTACT</span>
-      </div>
-
       <div className="container fc-container">
-        {/* Centered Header */}
+        {/* Centered Header with Illustrated Kids */}
         <motion.div
           className="fc-header"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <span className="fc-header-badge">
-            <Sparkles size={14} />
-            <span>Visit Our Colorful Campus</span>
-          </span>
-          <h2 className="fc-title">
-            Find Our Preschool &amp;{' '}
-            <span className="fc-title-highlight">Say Hello</span>
-          </h2>
+          <div className="fc-header-row">
+            <h2 className="fc-title">
+              Find Our Preschool &amp;{' '}
+              <span className="fc-title-highlight">Say Hello</span>
+            </h2>
+            <ContactMapKids className="fc-kids-banner" />
+          </div>
+
           <p className="fc-subtitle">
-            Drop by to see our joyful classrooms, meet our warm teachers, or send us a quick message below!
+            Drop by to see our joyful classrooms, meet our caring teachers, or send us a quick message below!
           </p>
         </motion.div>
 
         {/* Balanced 2-Column Layout */}
         <div className="fc-layout">
-          {/* Left Column: Colorful Location Card + Embedded Map + Direct Channels */}
+          {/* Left Column: Crisp Solid Preschool Location Card + Embedded Map + Pastel Contact Tiles */}
           <motion.div
             className="fc-location-col"
             initial={{ opacity: 0, x: -24 }}
@@ -160,7 +147,6 @@ export default function FindCenter() {
           >
             {/* Preschool Address & Map Card */}
             <div className="fc-card fc-address-card">
-              {/* Vibrant Sky-to-Emerald Top Header Banner */}
               <div className="fc-address-banner">
                 <div className="fc-address-icon">
                   <MapPin size={22} />
@@ -177,7 +163,7 @@ export default function FindCenter() {
                     {PRESCHOOL_LOCATION.addressLine1}, {PRESCHOOL_LOCATION.addressLine2}
                   </p>
                   <span className="fc-landmark-pill">
-                    🌳 Landmark: {PRESCHOOL_LOCATION.landmark}
+                    Landmark: {PRESCHOOL_LOCATION.landmark}
                   </span>
                 </div>
 
@@ -193,7 +179,7 @@ export default function FindCenter() {
 
                 <div className="fc-map-footer">
                   <span className="fc-map-note">
-                    🚗 Easy gate drop-off &amp; parent parking
+                    Safe gate drop-off &amp; parent parking
                   </span>
                   <a
                     href={PRESCHOOL_LOCATION.directionsUrl}
@@ -209,7 +195,7 @@ export default function FindCenter() {
               </div>
             </div>
 
-            {/* Colorful Quick Contact Cards */}
+            {/* Solid Pastel Contact Quick Cards */}
             <div className="fc-quick-grid">
               <a
                 href={`tel:${PRESCHOOL_LOCATION.phone.replace(/\s+/g, '')}`}
@@ -249,15 +235,22 @@ export default function FindCenter() {
             </div>
           </motion.div>
 
-          {/* Right Column: Colorful Send a Message Card */}
+          {/* Right Column: Solid Colorful Send a Message Card */}
           <motion.div
             className="fc-card fc-form-card"
             initial={{ opacity: 0, x: 24 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            {/* Playful Rainbow Accent Ribbon along top border */}
-            <div className="fc-rainbow-bar" aria-hidden="true" />
+            {/* 6 Solid Toy-Block Rainbow Color Bars (NO Gradient!) */}
+            <div className="fc-rainbow-blocks" aria-hidden="true">
+              <span style={{ background: '#ed1c24' }} />
+              <span style={{ background: '#f97316' }} />
+              <span style={{ background: '#f59e0b' }} />
+              <span style={{ background: '#22c55e' }} />
+              <span style={{ background: '#0ea5e9' }} />
+              <span style={{ background: '#a855f7' }} />
+            </div>
 
             <div className="fc-form-inner">
               {submitted ? (
@@ -265,14 +258,14 @@ export default function FindCenter() {
                   <div className="fc-success-badge">
                     <CheckCircle2 size={34} />
                   </div>
-                  <h3 className="fc-success-title">Message Sent! 🎉</h3>
+                  <h3 className="fc-success-title">Message Sent!</h3>
                   <p className="fc-success-desc">
                     Thank you, <strong>{submittedName}</strong>! We have received your enquiry for{' '}
                     <strong>{formData.program}</strong> and our coordinator will call or message you within 24 hours.
                   </p>
                   <div className="fc-success-summary">
-                    <span>📞 {formData.phone}</span>
-                    {formData.email && <span>✉️ {formData.email}</span>}
+                    <span>Phone: {formData.phone}</span>
+                    {formData.email && <span>Email: {formData.email}</span>}
                   </div>
                   <button
                     type="button"
@@ -285,10 +278,10 @@ export default function FindCenter() {
               ) : (
                 <form className="fc-form" onSubmit={handleSubmit} noValidate>
                   <div className="fc-form-hero">
-                    <span className="fc-form-badge">✉️ Quick Enquiry</span>
+                    <span className="fc-form-badge">Quick Enquiry</span>
                     <h3 className="fc-form-title">Send a Message</h3>
                     <p className="fc-form-desc">
-                      Ask about admissions, fee structure, timings, or book a friendly tour of our campus.
+                      Ask about admissions, fee structure, timings, or book a friendly campus tour.
                     </p>
                   </div>
 
@@ -362,7 +355,6 @@ export default function FindCenter() {
                               active ? 'is-active' : ''
                             }`}
                           >
-                            <span>{opt.emoji}</span>
                             <span>{opt.label}</span>
                           </button>
                         )
@@ -393,7 +385,7 @@ export default function FindCenter() {
                       <span>Send Message</span>
                     </button>
                     <span className="fc-privacy-note">
-                      🔒 100% private • No spam ever
+                      100% private • No spam ever
                     </span>
                   </div>
                 </form>

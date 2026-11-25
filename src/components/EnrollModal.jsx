@@ -93,7 +93,7 @@ export default function EnrollModal({ isOpen, onClose, initialProgram = 'Playgro
 
         {submitted ? (
           <div className="enr-success">
-            <div className="enr-success__icon">🎉</div>
+            <div className="enr-success__icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg></div>
             <span className="enr-success__badge">Admissions Desk</span>
             <h2 className="enr-success__title">Enrollment Application Received!</h2>
             <p className="enr-success__desc">
@@ -123,7 +123,7 @@ export default function EnrollModal({ isOpen, onClose, initialProgram = 'Playgro
         ) : (
           <div className="enr-content">
             <div className="enr-header">
-              <span className="enr-badge">🎒 Admissions 2026-27 Open</span>
+              <span className="enr-badge">Admissions 2026-27 Open</span>
               <h2 className="enr-title">Enroll Your Child at Nirankur</h2>
               <p className="enr-subtitle">
                 Fill out the quick enrollment form below. Our principal and admissions team will contact you directly.
@@ -284,10 +284,10 @@ export default function EnrollModal({ isOpen, onClose, initialProgram = 'Playgro
                   className="btn btn-primary enr-submit-btn"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Submitting Application...' : 'Submit Enrollment Application 🎒'}
+                  {isSubmitting ? 'Submitting Application...' : 'Submit Enrollment Application'}
                 </button>
                 <p className="enr-security-note">
-                  🔒 Your information is confidential. We do not share contact details with third parties.
+                  Your information is confidential. We do not share contact details with third parties.
                 </p>
               </div>
             </form>

@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { ProgramsHeaderKids } from './StoryKids'
 import './Programs.css'
 
 export default function Programs() {
@@ -16,11 +17,6 @@ export default function Programs() {
 
   return (
     <section className="programs-storybook" id="programs" ref={ref}>
-      {/* Huge Faint Watermark Text */}
-      <div className="programs-sb__watermark">
-        <span>OUR PROGRAMS</span>
-      </div>
-
       <div className="container programs-sb__container">
         {/* Title */}
         <motion.div
@@ -29,10 +25,13 @@ export default function Programs() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="programs-sb__title">
-            Learning Through <br />
-            Play, Creativity, And Care
-          </h2>
+          <div className="programs-sb__header-row">
+            <h2 className="programs-sb__title">
+              Learning Through <br />
+              Play, Creativity, And Care
+            </h2>
+            <ProgramsHeaderKids className="programs-sb__kids-deco" />
+          </div>
         </motion.div>
 
         {/* 3 Colorful Story Cards matching Reference Image */}

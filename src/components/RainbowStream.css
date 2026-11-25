@@ -1,0 +1,127 @@
+/* ====================================================================
+   SMOOTH CURVED THICK RAINBOW + SITE-WIDE FLOATING CLOUDS
+   Pure solid flat 21px round-joined bands + drifting flat clouds
+   ==================================================================== */
+
+.rainbow-stream {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.rainbow-stream__clouds {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.rs-cloud {
+  position: absolute;
+  opacity: 0.94;
+  will-change: transform;
+}
+
+.rs-cloud svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.rs-cloud--ltr {
+  left: -290px;
+  animation-name: cloudDriftLTR;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.rs-cloud--rtl {
+  left: calc(100% + 40px);
+  animation-name: cloudDriftRTL;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes cloudDriftLTR {
+  0% { transform: translate3d(0, 0px, 0); }
+  50% { transform: translate3d(calc(50vw + 280px), -8px, 0); }
+  100% { transform: translate3d(calc(100vw + 580px), 0px, 0); }
+}
+
+@keyframes cloudDriftRTL {
+  0% { transform: translate3d(0, 0px, 0); }
+  50% { transform: translate3d(calc(-50vw - 180px), 8px, 0); }
+  100% { transform: translate3d(calc(-100vw - 400px), 0px, 0); }
+}
+
+.rainbow-stream__svg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.rainbow-stream__streak {
+  opacity: 0.48;
+  animation: rainbowFlowDash 4.2s linear infinite;
+}
+
+/* Crisp 1:1 Child Sliding Along the Smooth Curved Website Rainbow */
+.rainbow-stream__slide-kid {
+  position: absolute;
+  width: 92px;
+  height: 84px;
+  pointer-events: none;
+  z-index: 4;
+  opacity: 0;
+  will-change: transform, left, top, opacity;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.16));
+}
+
+.rainbow-stream__slide-kid svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@keyframes rainbowFlowDash {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -278;
+  }
+}
+
+@keyframes rainbowBreeze {
+  0%, 100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .rainbow-stream {
+    opacity: 0.55;
+  }
+
+  .rs-cloud {
+    opacity: 0.65;
+  }
+
+  .rs-cloud svg {
+    transform: scale(0.78);
+    transform-origin: center;
+  }
+
+  .rainbow-stream__slide-kid {
+    display: none;
+  }
+}

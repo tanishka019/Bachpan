@@ -142,7 +142,7 @@ export default function AdminPage() {
     try {
       const supabase = getSupabase()
       if (!supabase) {
-        setSbStatusMsg('❌ Invalid URL or Key. Please check the values and try again.')
+        setSbStatusMsg('Invalid URL or Key. Please check the values and try again.')
         setConnectedState(false)
         setIsTestingSb(false)
         return
@@ -151,18 +151,18 @@ export default function AdminPage() {
       const { error } = await supabase.from('gallery_items').select('id').limit(1)
       if (error) {
         if (error.message?.includes('does not exist')) {
-          setSbStatusMsg('⚠️ Connected to Supabase project! However, tables were not found yet. Please run the supabase_setup.sql script in your Supabase SQL Editor.')
+          setSbStatusMsg('Notice: Connected to Supabase project! However, tables were not found yet. Please run the supabase_setup.sql script in your Supabase SQL Editor.')
           setConnectedState(true)
         } else {
-          setSbStatusMsg(`⚠️ Connected to Supabase! Query notice: ${error.message}`)
+          setSbStatusMsg(`Notice: Connected to Supabase! Query notice: ${error.message}`)
           setConnectedState(true)
         }
       } else {
-        setSbStatusMsg('✅ Connected successfully to Supabase! Both database queries and storage are active.')
+        setSbStatusMsg('Connected successfully to Supabase! Both database queries and storage are active.')
         setConnectedState(true)
       }
     } catch (err) {
-      setSbStatusMsg(`❌ Connection error: ${err.message}`)
+      setSbStatusMsg(`Connection error: ${err.message}`)
       setConnectedState(false)
     } finally {
       setIsTestingSb(false)
@@ -430,7 +430,7 @@ export default function AdminPage() {
   const handleClearAllMoments = () => {
     if (
       window.confirm(
-        '⚠️ Are you sure you want to delete ALL moments from the gallery? This will clear all uploaded media from the live gallery. You can restore default demo moments anytime by clicking "Reset Moments".'
+        'Are you sure you want to delete ALL moments from the gallery? This will clear all uploaded media from the live gallery. You can restore default demo moments anytime by clicking "Reset Moments".'
       )
     ) {
       const updated = clearAllMemories()
@@ -469,7 +469,7 @@ export default function AdminPage() {
 
   const handleSaveHeroSlides = () => {
     saveHeroSlides(heroSlides)
-    setHeroFeedback('✅ Hero banner updated successfully! The new images and captions are live on the homepage.')
+    setHeroFeedback('Hero banner updated successfully! The new images and captions are live on the homepage.')
     setTimeout(() => setHeroFeedback(''), 4500)
   }
 
@@ -514,7 +514,7 @@ export default function AdminPage() {
                 Unlock Portal →
               </button>
             </div>
-            <span className="adm-lock-hint">💡 Default PIN: <code>1234</code></span>
+            <span className="adm-lock-hint">Default PIN: <code>1234</code></span>
           </form>
         </div>
       </div>
@@ -558,7 +558,7 @@ export default function AdminPage() {
               onClick={() => setIsUnlocked(false)}
               title="Lock Admin Session"
             >
-              🔒 Lock
+              Lock
             </button>
           </div>
         </div>
@@ -576,7 +576,7 @@ export default function AdminPage() {
           </div>
 
           <div className="adm-notice-card">
-            <strong>⚡ Live Connected Hub</strong>
+            <strong>Live Connected Hub</strong>
             <span>All forms submitted on the website appear here immediately. Published moments sync live to the gallery.</span>
           </div>
         </section>
@@ -584,7 +584,7 @@ export default function AdminPage() {
         {/* Global Metrics Cards */}
         <section className="adm-metrics">
           <div className="adm-metric-card" onClick={() => setActiveTab('leads')} style={{ cursor: 'pointer' }}>
-            <div className="adm-metric-icon">📥</div>
+            <div className="adm-metric-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12" /><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" /></svg></div>
             <div>
               <div className="adm-metric-val">{leadMetrics.total}</div>
               <div className="adm-metric-lbl">Total Enquiries</div>
@@ -597,7 +597,7 @@ export default function AdminPage() {
           </div>
 
           <div className="adm-metric-card" onClick={() => setActiveTab('leads')} style={{ cursor: 'pointer' }}>
-            <div className="adm-metric-icon">🎒</div>
+            <div className="adm-metric-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 9 3 12 0v-5" /></svg></div>
             <div>
               <div className="adm-metric-val">{leadMetrics.enrolledCount}</div>
               <div className="adm-metric-lbl">Enrolled Students</div>
@@ -605,7 +605,7 @@ export default function AdminPage() {
           </div>
 
           <div className="adm-metric-card" onClick={() => setActiveTab('gallery')} style={{ cursor: 'pointer' }}>
-            <div className="adm-metric-icon">📸</div>
+            <div className="adm-metric-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" ry="2" /><circle cx="9" cy="9" r="2" /><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" /></svg></div>
             <div>
               <div className="adm-metric-val">{memories.length}</div>
               <div className="adm-metric-lbl">Gallery Moments</div>
@@ -613,7 +613,7 @@ export default function AdminPage() {
           </div>
 
           <div className="adm-metric-card" onClick={() => setActiveTab('leads')} style={{ cursor: 'pointer' }}>
-            <div className="adm-metric-icon">📅</div>
+            <div className="adm-metric-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2" /><line x1="16" x2="16" y1="2" y2="6" /><line x1="8" x2="8" y1="2" y2="6" /><line x1="3" x2="21" y1="10" y2="10" /></svg></div>
             <div>
               <div className="adm-metric-val">{leadMetrics.scheduledCount}</div>
               <div className="adm-metric-lbl">Visits Scheduled</div>
@@ -627,7 +627,7 @@ export default function AdminPage() {
             className={`adm-tab-btn ${activeTab === 'leads' ? 'active' : ''}`}
             onClick={() => setActiveTab('leads')}
           >
-            📋 Inquiries & Admissions
+            Inquiries &amp; Admissions
             <span className="adm-tab-badge">{leads.length}</span>
             {leadMetrics.newCount > 0 && (
               <span className="adm-tab-pill-new">{leadMetrics.newCount} New</span>
@@ -638,7 +638,7 @@ export default function AdminPage() {
             className={`adm-tab-btn ${activeTab === 'gallery' ? 'active' : ''}`}
             onClick={() => setActiveTab('gallery')}
           >
-            🖼️ Gallery & Uploads
+            Gallery &amp; Uploads
             <span className="adm-tab-badge">{memories.length}</span>
           </button>
 
@@ -646,7 +646,7 @@ export default function AdminPage() {
             className={`adm-tab-btn ${activeTab === 'hero' ? 'active' : ''}`}
             onClick={() => setActiveTab('hero')}
           >
-            🌟 Hero Banner (3 Images)
+            Hero Banner (3 Images)
             <span className="adm-tab-badge">3 Slides</span>
           </button>
 
@@ -654,7 +654,7 @@ export default function AdminPage() {
             className={`adm-tab-btn ${activeTab === 'settings' ? 'active' : ''}`}
             onClick={() => setActiveTab('settings')}
           >
-            ⚙️ Cloud & Settings
+            Cloud &amp; Settings
           </button>
         </div>
 
@@ -678,14 +678,14 @@ export default function AdminPage() {
                   onClick={() => exportLeadsToCSV(filteredLeads)}
                   title="Download Excel/CSV of current inquiries"
                 >
-                  📥 Export to CSV
+                  Export to CSV
                 </button>
                 <button
                   type="button"
                   className="adm-btn adm-btn--add"
                   onClick={() => setIsAddLeadModalOpen(true)}
                 >
-                  ➕ Log Manual Lead
+                  Log Manual Lead
                 </button>
                 <button
                   type="button"
@@ -701,7 +701,7 @@ export default function AdminPage() {
             {/* Filter and Search Bar */}
             <div className="adm-filter-card">
               <div className="adm-search-box">
-                <span className="adm-search-icon">🔍</span>
+                <span className="adm-search-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg></span>
                 <input
                   type="text"
                   placeholder="Search by Parent name, Child, Phone, Email, City..."
@@ -722,8 +722,8 @@ export default function AdminPage() {
                   className="adm-select"
                 >
                   <option value="All">All Sources ({leads.length})</option>
-                  <option value="Enroll Now">🎒 Enroll Now ({leadMetrics.enrollNowCount})</option>
-                  <option value="Contact Section">📍 Contact Section ({leadMetrics.contactSectionCount})</option>
+                  <option value="Enroll Now">Enroll Now ({leadMetrics.enrollNowCount})</option>
+                  <option value="Contact Section">Contact Section ({leadMetrics.contactSectionCount})</option>
                 </select>
 
                 {/* Status Filter */}
@@ -759,7 +759,7 @@ export default function AdminPage() {
             <div className="adm-leads-list">
               {filteredLeads.length === 0 ? (
                 <div className="adm-empty-state">
-                  <div className="adm-empty-icon">📭</div>
+                  <div className="adm-empty-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12" /><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" /></svg></div>
                   <h3>No Inquiries Found</h3>
                   <p>No leads match your current search and filter criteria.</p>
                   <button
@@ -785,13 +785,13 @@ export default function AdminPage() {
                       <div className="adm-lead-card__header">
                         <div className="adm-lead-badges">
                           <span className={`adm-source-pill ${isEnrollNow ? 'adm-source-pill--enroll' : 'adm-source-pill--contact'}`}>
-                            {isEnrollNow ? '🎒 Enroll Now Form' : '📍 Contact & Tour Form'}
+                            {isEnrollNow ? 'Enroll Now Form' : 'Contact & Tour Form'}
                           </span>
                           <span className="adm-time-pill">
-                            🕒 {formatLeadTime(lead.created_at)}
+                            {formatLeadTime(lead.created_at)}
                           </span>
                           <span className="adm-city-pill">
-                            📍 {lead.city || 'City N/A'}
+                            {lead.city || 'City N/A'}
                           </span>
                         </div>
 
@@ -833,7 +833,7 @@ export default function AdminPage() {
                                   className="adm-contact-btn adm-contact-btn--call"
                                   title="Call Parent"
                                 >
-                                  📞 Call {lead.phone}
+                                  Call {lead.phone}
                                 </a>
                                 <a
                                   href={`https://wa.me/${lead.phone.replace(/[^0-9]/g, '')}`}
@@ -842,7 +842,7 @@ export default function AdminPage() {
                                   className="adm-contact-btn adm-contact-btn--wa"
                                   title="Send WhatsApp Message"
                                 >
-                                  💬 WhatsApp
+                                  WhatsApp
                                 </a>
                               </>
                             )}
@@ -852,7 +852,7 @@ export default function AdminPage() {
                                 className="adm-contact-btn adm-contact-btn--email"
                                 title="Send Email"
                               >
-                                ✉️ {lead.email}
+                                {lead.email}
                               </a>
                             )}
                           </div>
@@ -879,7 +879,7 @@ export default function AdminPage() {
                                   className="adm-notes-edit-btn"
                                   onClick={() => handleStartEditNotes(lead)}
                                 >
-                                  ✏️ {lead.admin_notes ? 'Edit' : 'Add Note'}
+                                  {lead.admin_notes ? 'Edit' : 'Add Note'}
                                 </button>
                               )}
                             </div>
@@ -928,7 +928,7 @@ export default function AdminPage() {
                             className="adm-view-btn"
                             onClick={() => setSelectedLeadDetail(lead)}
                           >
-                            👁️ Full Details
+                            Full Details
                           </button>
                           <button
                             type="button"
@@ -969,7 +969,7 @@ export default function AdminPage() {
                   onClick={() => navigate('/gallery')}
                   title="Open live gallery in another tab or view"
                 >
-                  👁️ Open Live Gallery →
+                  Open Live Gallery →
                 </button>
                 <button
                   type="button"
@@ -977,7 +977,7 @@ export default function AdminPage() {
                   onClick={handleClearAllMoments}
                   title="Delete all uploads and moments from the gallery"
                 >
-                  🗑️ Clear All Moments
+                  Clear All Moments
                 </button>
                 <button
                   type="button"
@@ -998,7 +998,7 @@ export default function AdminPage() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
                 >
-                  ✅ {galleryFeedback}
+                  {galleryFeedback}
                 </motion.div>
               )}
             </AnimatePresence>
@@ -1015,7 +1015,7 @@ export default function AdminPage() {
                   {/* Event Date Picker */}
                   <div className="adm-field">
                     <label htmlFor="adm-date">
-                      📅 Event Date * <span className="adm-field-hint">(Determines month and day in gallery timeline)</span>
+                      Event Date * <span className="adm-field-hint">(Determines month and day in gallery timeline)</span>
                     </label>
                     <input
                       id="adm-date"
@@ -1085,7 +1085,7 @@ export default function AdminPage() {
                           setUploadedFileName('')
                         }}
                       >
-                        📷 Photograph
+                        Photograph
                       </button>
                       <button
                         type="button"
@@ -1096,7 +1096,7 @@ export default function AdminPage() {
                           setUploadedFileName('')
                         }}
                       >
-                        🎬 Video Clip
+                        Video Clip
                       </button>
                     </div>
                   </div>
@@ -1113,7 +1113,7 @@ export default function AdminPage() {
                         style={{ display: 'none' }}
                       />
                       <label htmlFor="adm-file-input" className="adm-file-btn">
-                        📁 {uploadedFileName ? `Selected: ${uploadedFileName}` : 'Choose File from Computer'}
+                        {uploadedFileName ? `Selected: ${uploadedFileName}` : 'Choose File from Computer'}
                       </label>
 
                       <div className="adm-presets">
@@ -1145,7 +1145,7 @@ export default function AdminPage() {
                         <video src={mediaUrl} controls playsInline />
                       )}
                       <span className="adm-preview-tag">
-                        {mediaType === 'image' ? '📷 Photo' : '🎬 Video'}
+                        {mediaType === 'image' ? 'Photo' : 'Video'}
                       </span>
                     </div>
                   </div>
@@ -1164,7 +1164,7 @@ export default function AdminPage() {
                   </div>
 
                   <button type="submit" className="adm-submit-btn">
-                    Publish Moment to Gallery 🚀
+                    Publish Moment to Gallery
                   </button>
                 </form>
               </section>
@@ -1181,7 +1181,7 @@ export default function AdminPage() {
                       className="adm-view-gallery-link"
                       onClick={() => navigate('/gallery')}
                     >
-                      View Live Gallery ↗
+                      View Live Gallery
                     </button>
                   </div>
 
@@ -1212,8 +1212,8 @@ export default function AdminPage() {
                       className="adm-select adm-select--sm"
                     >
                       <option value="All">All Formats</option>
-                      <option value="Photos">📷 Photos Only</option>
-                      <option value="Videos">🎬 Videos Only</option>
+                      <option value="Photos">Photos Only</option>
+                      <option value="Videos">Videos Only</option>
                     </select>
                   </div>
                 </div>
@@ -1236,7 +1236,7 @@ export default function AdminPage() {
                         className="adm-btn adm-btn--danger-sm"
                         onClick={handleDeleteSelectedMoments}
                       >
-                        🗑️ Delete Selected ({selectedMomentIds.length})
+                        Delete Selected ({selectedMomentIds.length})
                       </button>
                     )}
                   </div>
@@ -1245,7 +1245,7 @@ export default function AdminPage() {
                 <div className="adm-list-feed">
                   {filteredMemories.length === 0 ? (
                     <div className="adm-empty-state">
-                      <div className="adm-empty-icon">🖼️</div>
+                      <div className="adm-empty-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" ry="2" /><circle cx="9" cy="9" r="2" /><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" /></svg></div>
                       <h3>No Moments Found</h3>
                       <p>Try clearing your search query or category filters.</p>
                     </div>
@@ -1271,13 +1271,13 @@ export default function AdminPage() {
                             ) : (
                               <img src={item.url} alt={item.title} />
                             )}
-                            <span className="adm-item__tag">{isVideo ? '🎬' : '📷'}</span>
+                            <span className="adm-item__tag">{isVideo ? 'Video' : 'Photo'}</span>
                           </div>
 
                           <div className="adm-item__info">
                             <div className="adm-item__meta">
-                              📅 {dateInfo.fullDate} • {item.category}
-                              {item.location && <span> • 📍 {item.location}</span>}
+                              {dateInfo.fullDate} • {item.category}
+                              {item.location && <span> • {item.location}</span>}
                             </div>
                             <h3 className="adm-item__title">{item.title}</h3>
                             <p className="adm-item__caption">{item.caption}</p>
@@ -1330,7 +1330,7 @@ export default function AdminPage() {
                   className="btn btn-primary"
                   onClick={handleSaveHeroSlides}
                 >
-                  💾 Save All Hero Changes
+                  Save All Hero Changes
                 </button>
                 <button
                   type="button"
@@ -1344,7 +1344,7 @@ export default function AdminPage() {
                   className="adm-btn adm-btn--export"
                   onClick={() => navigate('/')}
                 >
-                  🏠 View Homepage ↗
+                  View Homepage
                 </button>
               </div>
             </div>
@@ -1374,7 +1374,7 @@ export default function AdminPage() {
                   <div className="adm-hero-preview">
                     <img src={slide.bgImage} alt={`Hero Slide ${idx + 1}`} />
                     <span className="adm-hero-preview-badge">{slide.badge}</span>
-                    <span className="adm-hero-preview-label">📸 {slide.photoLabel}</span>
+                    <span className="adm-hero-preview-label">{slide.photoLabel}</span>
                   </div>
 
                   {/* Change Image */}
@@ -1389,7 +1389,7 @@ export default function AdminPage() {
                         onChange={(e) => handleHeroImageUpload(idx, e.target.files?.[0])}
                       />
                       <label htmlFor={`hero-file-${idx}`} className="adm-file-btn" style={{ flex: 1, padding: '7px 10px', fontSize: '0.82rem' }}>
-                        📁 Choose Image from Computer
+                        Choose Image from Computer
                       </label>
                     </div>
 
@@ -1438,7 +1438,7 @@ export default function AdminPage() {
                       value={slide.badge}
                       onChange={(e) => handleHeroSlideChange(idx, 'badge', e.target.value)}
                       className="adm-input"
-                      placeholder="e.g. 🎨 Play-Based Learning"
+                      placeholder="e.g. Play-Based Learning"
                     />
                   </div>
 
@@ -1494,7 +1494,7 @@ export default function AdminPage() {
                 onClick={handleSaveHeroSlides}
                 style={{ padding: '10px 24px', fontWeight: 700 }}
               >
-                💾 Save All Hero Changes
+                Save All Hero Changes
               </button>
             </div>
           </section>
@@ -1514,7 +1514,7 @@ export default function AdminPage() {
               <div className="adm-settings-status">
                 <div className="adm-status-box">
                   <span className="adm-status-icon">
-                    {connectedState || isSupabaseConfigured() ? '✅' : '⚡'}
+                    {connectedState || isSupabaseConfigured() ? 'Active' : 'Setup'}
                   </span>
                   <div>
                     <h4>{connectedState || isSupabaseConfigured() ? 'Supabase Connected' : 'Running in Local Storage Mode'}</h4>
@@ -1531,7 +1531,7 @@ export default function AdminPage() {
               <div className="adm-card" style={{ background: '#f8fafc', marginBottom: '24px', border: '1.5px solid #cbd5e1' }}>
                 <div className="adm-card__header">
                   <h3 style={{ fontSize: '1.1rem', fontWeight: 800, margin: '0 0 4px', color: '#0f172a' }}>
-                    🔑 Connect Your Supabase Credentials
+                    Connect Your Supabase Credentials
                   </h3>
                   <p style={{ fontSize: '0.82rem', color: '#64748b', margin: 0 }}>
                     Enter or verify your Supabase Project URL and Anon Public Key below to test and connect instantly.
@@ -1571,8 +1571,8 @@ export default function AdminPage() {
                         borderRadius: '8px',
                         fontSize: '0.85rem',
                         fontWeight: 600,
-                        background: sbStatusMsg.startsWith('✅') ? '#f0fdf4' : sbStatusMsg.startsWith('⚠️') ? '#fffbeb' : '#fef2f2',
-                        color: sbStatusMsg.startsWith('✅') ? '#15803d' : sbStatusMsg.startsWith('⚠️') ? '#b45309' : '#dc2626',
+                        background: sbStatusMsg.startsWith('Connected successfully') ? '#f0fdf4' : sbStatusMsg.startsWith('Notice:') ? '#fffbeb' : '#fef2f2',
+                        color: sbStatusMsg.startsWith('Connected successfully') ? '#15803d' : sbStatusMsg.startsWith('Notice:') ? '#b45309' : '#dc2626',
                         border: '1px solid currentColor',
                       }}
                     >
@@ -1587,7 +1587,7 @@ export default function AdminPage() {
                       disabled={isTestingSb}
                       style={{ padding: '10px 20px', fontWeight: 700 }}
                     >
-                      {isTestingSb ? 'Testing Connection...' : '💾 Save & Connect Supabase'}
+                      {isTestingSb ? 'Testing Connection...' : 'Save & Connect Supabase'}
                     </button>
                     {(connectedState || isSupabaseConfigured()) && (
                       <span style={{ fontSize: '0.82rem', color: '#15803d', fontWeight: 600 }}>
@@ -1680,7 +1680,7 @@ VITE_ADMIN_PIN=1234`}
                   <label className="adm-modal-lbl">Phone Number</label>
                   <div className="adm-modal-val">
                     <a href={`tel:${selectedLeadDetail.phone}`} style={{ color: '#2563eb', fontWeight: 600 }}>
-                      📞 {selectedLeadDetail.phone}
+                      {selectedLeadDetail.phone}
                     </a>
                   </div>
                 </div>
@@ -1753,7 +1753,7 @@ VITE_ADMIN_PIN=1234`}
                   rel="noreferrer"
                   className="btn btn-primary"
                 >
-                  💬 Open WhatsApp Chat
+                  Open WhatsApp Chat
                 </a>
               )}
             </div>

@@ -108,7 +108,7 @@ export default function SupabaseConfigModal({ isOpen, onClose, onConfigSaved }) 
       >
         <div className="cfg-modal__header">
           <div>
-            <div className="cfg-badge">⚡ Database & Storage</div>
+            <div className="cfg-badge">Database &amp; Storage</div>
             <h3 className="cfg-modal__title">Supabase Setup & Connection</h3>
           </div>
           <button className="cfg-modal__close" onClick={onClose} aria-label="Close">
@@ -173,16 +173,16 @@ export default function SupabaseConfigModal({ isOpen, onClose, onConfigSaved }) 
           {/* Test Status feedback */}
           {testStatus && (
             <div className={`cfg-test-result cfg-test-result--${testStatus}`}>
-              {testStatus === 'testing' && '⏳ '}
-              {testStatus === 'success' && '✅ '}
-              {testStatus === 'error' && '❌ '}
+              {testStatus === 'testing' && 'Testing: '}
+              {testStatus === 'success' && 'Connected: '}
+              {testStatus === 'error' && 'Error: '}
               <span>{testMessage}</span>
             </div>
           )}
 
           {savedSuccess && (
             <div className="cfg-test-result cfg-test-result--success">
-              ✅ Settings saved! Connecting to Supabase...
+              Settings saved! Connecting to Supabase...
             </div>
           )}
 

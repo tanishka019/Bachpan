@@ -39,7 +39,7 @@ export default function AdminPinModal({ isOpen, onClose, onSuccess }) {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="pin-modal__header">
-          <div className="pin-modal__icon">🔐</div>
+          <div className="pin-modal__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg></div>
           <h3>Admin Authentication</h3>
           <p>Enter the Admin PIN to upload or manage photos and videos.</p>
         </div>
@@ -63,7 +63,7 @@ export default function AdminPinModal({ isOpen, onClose, onSuccess }) {
           {error && <div className="pin-error">{error}</div>}
 
           <div className="pin-hint">
-            💡 Default PIN: <code>1234</code> (configurable in <code>.env</code>)
+            Default PIN: <code>1234</code> (configurable in <code>.env</code>)
           </div>
 
           <div className="pin-modal__actions">

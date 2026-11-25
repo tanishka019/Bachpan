@@ -171,25 +171,27 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #f59e0b, #ea580c);
+  background: #ea580c;
   color: var(--white);
-  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
+  box-shadow: 0 5px 0 #c2410c;
 }
 
 .btn-primary:hover {
+  background: #f97316;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.45);
+  box-shadow: 0 7px 0 #c2410c;
 }
 
 .btn-secondary {
-  background: linear-gradient(135deg, #16a34a, #15803d);
+  background: #16a34a;
   color: var(--white);
-  box-shadow: 0 4px 15px rgba(22, 163, 74, 0.28);
+  box-shadow: 0 5px 0 #15803d;
 }
 
 .btn-secondary:hover {
+  background: #22c55e;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(22, 163, 74, 0.40);
+  box-shadow: 0 7px 0 #15803d;
 }
 
 .btn-outline {
@@ -266,10 +268,7 @@
 }
 
 .section-title span {
-  background: linear-gradient(135deg, #d97706 0%, #ea580c 50%, #f59e0b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ea580c;
 }
 
 .section-subtitle {
