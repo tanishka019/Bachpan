@@ -1,3 +1,6 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ===========================
    NIRANKUR DESIGN SYSTEM
    =========================== */
@@ -235,20 +238,21 @@ ul {
 .badge-rose   { background: #ffe4e6 !important; color: #e11d48 !important; border: 1px solid #fecdd3 !important; }
 .badge-green  { background: #dcfce7 !important; color: #15803d !important; border: 1px solid #bbf7d0 !important; }
 
-/* Rainbow Brand Letters from Nirankur Logo */
+/* Brand Letters matched to official Nirankur Logo */
 .brand-rainbow {
   display: inline-flex;
   font-family: var(--font-heading);
   font-weight: 800;
+  letter-spacing: -0.2px;
 }
-.brand-rainbow .c-n1 { color: #0c5328; }
-.brand-rainbow .c-i  { color: #16a34a; }
-.brand-rainbow .c-r1 { color: #ea384c; }
-.brand-rainbow .c-a  { color: #f97316; }
-.brand-rainbow .c-n2 { color: #9333ea; }
-.brand-rainbow .c-k  { color: #1e1b4b; }
-.brand-rainbow .c-u  { color: #9a3412; }
-.brand-rainbow .c-r2 { color: #0284c7; }
+.brand-rainbow .c-n1 { color: #063d0d; } /* N - Forest Green */
+.brand-rainbow .c-i  { color: #063d0d; } /* i - Forest Green */
+.brand-rainbow .c-r1 { color: #063d0d; } /* r - Forest Green */
+.brand-rainbow .c-a  { color: #ed1c24; } /* a - Vibrant Red */
+.brand-rainbow .c-n2 { color: #a3238e; } /* n - Magenta / Purple */
+.brand-rainbow .c-k  { color: #200a4b; } /* k - Deep Navy Blue */
+.brand-rainbow .c-u  { color: #661300; } /* u - Maroon / Warm Brown */
+.brand-rainbow .c-r2 { color: #0095da; } /* r - Vivid Sky Blue */
 
 .section-title {
   font-family: var(--font-heading);

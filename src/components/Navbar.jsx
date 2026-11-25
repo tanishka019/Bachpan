@@ -5,8 +5,8 @@ import './Navbar.css'
 
 const navLinks = [
   { label: 'Home',         href: '#home',         route: '/' },
+  { label: 'Our Story',    href: '#why-nirankur', route: null },
   { label: 'Programs',     href: '#programs',     route: null },
-  { label: 'Why Nirankur', href: '#why-nirankur', route: null },
   { label: 'Gallery',      href: null,            route: '/gallery' },
   { label: 'Contact',      href: '#contact',      route: null },
   { label: 'Admin',        href: null,            route: '/admin' },

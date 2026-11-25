@@ -1,32 +1,58 @@
-/* ===========================
-   PROGRAMS SECTION
-   =========================== */
-.programs {
-  background: var(--bg-light);
+/* ====================================================================
+   OUR PROGRAMS — Storybook 3-Card Layout matching Reference Image
+   ==================================================================== */
+
+.programs-storybook {
   position: relative;
+  background: #fdfbf4;
+  padding: 40px 0 110px;
   overflow: hidden;
 }
 
-.programs::before {
-  content: '🎨';
+/* ── Faint Watermark Text behind Title ── */
+.programs-sb__watermark {
   position: absolute;
-  font-size: 10rem;
-  opacity: 0.04;
-  top: -20px;
-  right: -30px;
-  pointer-events: none;
-}
-
-.programs__header {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
   text-align: center;
-  margin-bottom: 56px;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
 }
 
-.programs__header .section-subtitle {
-  margin: 0 auto;
+.programs-sb__watermark span {
+  font-family: var(--font-heading);
+  font-size: clamp(3.2rem, 8vw, 6.5rem);
+  font-weight: 900;
+  color: rgba(245, 158, 11, 0.08);
+  letter-spacing: 4px;
+  white-space: nowrap;
 }
 
-.programs__grid {
+.programs-sb__container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Title in Warm Reddish Orange ── */
+.programs-sb__header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.programs-sb__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4.4vw, 3.4rem);
+  font-weight: 800;
+  color: #ea580c;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+/* ── 3-Column Program Cards Grid ── */
+.programs-sb__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
@@ -34,173 +60,107 @@
   margin: 0 auto;
 }
 
-/* Program Card */
-.prog-card {
-  border-radius: var(--radius-xl);
-  padding: 28px 24px;
+/* Base Story Card */
+.prog-card-sb {
+  border-radius: 28px;
+  padding: 34px 28px 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  transition: var(--transition);
-  border: 1px solid transparent;
-}
-
-.prog-card::before {
-  content: '';
-  position: absolute;
-  top: -40px;
-  right: -40px;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.1);
-}
-
-/* Card Color Themes */
-.card-purple {
-  background: linear-gradient(145deg, #15803d, #16a34a);
-  color: var(--white);
-  box-shadow: 0 10px 40px rgba(21, 128, 61, 0.3);
-}
-
-.card-teal {
-  background: linear-gradient(145deg, #0d9488, #0891b2);
-  color: var(--white);
-  box-shadow: 0 10px 40px rgba(13, 148, 136, 0.3);
-}
-
-.card-coral {
-  background: linear-gradient(145deg, #ea580c, #f97316);
-  color: var(--white);
-  box-shadow: 0 10px 40px rgba(234, 88, 12, 0.3);
-}
-
-.card-golden {
-  background: linear-gradient(145deg, #d97706, #f59e0b);
-  color: var(--white);
-  box-shadow: 0 10px 40px rgba(217, 119, 6, 0.3);
-}
-
-.prog-card:hover {
-  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-  border-color: rgba(255,255,255,0.3);
-}
-
-.prog-card__top {
-  display: flex;
-  align-items: flex-start;
   justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 12px 32px -10px rgba(0, 0, 0, 0.12);
+  color: #ffffff;
+  overflow: hidden;
+  position: relative;
+  min-height: 480px;
 }
 
-.prog-card__emoji {
-  font-size: 2.8rem;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
-  line-height: 1;
+.prog-card-sb:hover {
+  box-shadow: 0 20px 48px -10px rgba(0, 0, 0, 0.2);
 }
 
-/* Tags */
-.tag--coral { background: rgba(255,255,255,0.2); color: var(--white); }
-.tag--teal { background: rgba(255,255,255,0.2); color: var(--white); }
-.tag--golden { background: rgba(255,255,255,0.2); color: var(--white); }
-
-.prog-card__tag {
-  background: rgba(255,255,255,0.2) !important;
-  color: var(--white) !important;
-  font-size: 0.7rem;
-  border: 1px solid rgba(255,255,255,0.3);
-}
-
-.prog-card__info {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.prog-card__title {
+.prog-card-sb__title {
   font-family: var(--font-heading);
+  font-size: 1.85rem;
   font-weight: 800;
-  font-size: 1.4rem;
-  color: var(--white);
+  margin-bottom: 12px;
+  color: #ffffff;
 }
 
-.prog-card__age {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: rgba(255,255,255,0.8);
-  background: rgba(255,255,255,0.12);
-  padding: 4px 10px;
-  border-radius: var(--radius-full);
-  width: fit-content;
-}
-
-.prog-card__desc {
+.prog-card-sb__desc {
   font-size: 0.88rem;
   line-height: 1.65;
-  color: rgba(255,255,255,0.82);
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 18px;
 }
 
-.prog-card__features {
+.prog-card-sb__meta {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  flex: 1;
-}
-
-.prog-card__feature {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.83rem;
+  gap: 4px;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.88);
+  padding: 10px 14px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  margin-bottom: 10px;
 }
 
-.prog-card__check {
-  width: 18px;
-  height: 18px;
-  background: rgba(255,255,255,0.25);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.65rem;
-  flex-shrink: 0;
-  font-weight: 800;
+/* Bottom Illustration Area */
+.prog-card-sb__illustration {
+  width: 100%;
+  height: 130px;
+  margin-top: auto;
+  pointer-events: none;
 }
 
-.prog-card__btn {
-  background: rgba(255,255,255,0.15);
-  border: 1.5px solid rgba(255,255,255,0.4);
-  color: var(--white);
-  padding: 10px 20px;
-  border-radius: var(--radius-full);
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: var(--transition);
-  text-align: center;
+.prog-card-sb__illustration svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
-.prog-card__btn:hover {
-  background: rgba(255,255,255,0.3);
-  transform: translateX(4px);
+/* ── 3 Color Themes matching Reference Image ── */
+
+/* 1. PlayGroup: Blue Card */
+.prog-card-sb--blue {
+  background: linear-gradient(180deg, #38bdf8 0%, #0ea5e9 100%);
 }
 
+/* 2. Nursery: Fresh Green Card */
+.prog-card-sb--green {
+  background: linear-gradient(180deg, #4ade80 0%, #22c55e 100%);
+}
+
+/* 3. Junior KG: Coral Red Card */
+.prog-card-sb--coral {
+  background: linear-gradient(180deg, #fb7185 0%, #f43f5e 100%);
+}
+
+/* ── Responsive ── */
 @media (max-width: 960px) {
-  .programs__grid {
+  .programs-sb__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 640px) {
-  .programs__grid {
+  .programs-storybook {
+    padding: 30px 0 70px;
+  }
+
+  .programs-sb__grid {
     grid-template-columns: 1fr;
+  }
+
+  .programs-sb__title {
+    font-size: 2.2rem;
+  }
+
+  .prog-card-sb {
+    min-height: 420px;
+    padding: 26px 20px 0;
   }
 }

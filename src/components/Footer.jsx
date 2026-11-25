@@ -48,14 +48,14 @@ export default function Footer() {
               <img src="/logo.png" alt="Nirankur Logo" className="footer__logo-img" />
               <div>
                 <div className="footer__logo-name brand-rainbow" style={{ fontSize: '1.45rem' }}>
-                  <span className="c-n1" style={{ color: '#86efac' }}>N</span>
-                  <span className="c-i" style={{ color: '#4ade80' }}>i</span>
-                  <span className="c-r1" style={{ color: '#f87171' }}>r</span>
-                  <span className="c-a" style={{ color: '#fb923c' }}>a</span>
-                  <span className="c-n2" style={{ color: '#c084fc' }}>n</span>
-                  <span className="c-k" style={{ color: '#93c5fd' }}>k</span>
-                  <span className="c-u" style={{ color: '#fde047' }}>u</span>
-                  <span className="c-r2" style={{ color: '#38bdf8' }}>r</span>
+                  <span className="c-n1">N</span>
+                  <span className="c-i">i</span>
+                  <span className="c-r1">r</span>
+                  <span className="c-a">a</span>
+                  <span className="c-n2">n</span>
+                  <span className="c-k">k</span>
+                  <span className="c-u">u</span>
+                  <span className="c-r2">r</span>
                 </div>
                 <div className="footer__logo-sub">The Foundation Stage</div>
               </div>

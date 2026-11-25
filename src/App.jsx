@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import Stats from './components/Stats'
 import Programs from './components/Programs'
 import WhyNirankur from './components/WhyBachpan'
 import GalleryTeaser from './components/GalleryTeaser'
@@ -25,9 +24,8 @@ function HomePage() {
       <Navbar scrolled={scrolled} />
       <main>
         <Hero />
-        <Stats />
-        <Programs />
         <WhyNirankur />
+        <Programs />
         <GalleryTeaser />
         <Testimonials />
         <FindCenter />

@@ -2,101 +2,117 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import './WhyBachpan.css'
 
-const features = [
-  {
-    icon: '🧠',
-    title: 'Holistic Development',
-    desc: 'We nurture cognitive, emotional, social, and physical growth through our 360° development framework.',
-    color: 'feat-purple',
-  },
-  {
-    icon: '👩‍🏫',
-    title: 'Expert Educators',
-    desc: 'Our teachers are certified early childhood professionals trained in child psychology and modern pedagogy.',
-    color: 'feat-teal',
-  },
-  {
-    icon: '🛡️',
-    title: 'Safe & Secure',
-    desc: 'CCTV-monitored campuses, secure entry systems, and child-safe furniture ensure complete peace of mind.',
-    color: 'feat-coral',
-  },
-  {
-    icon: '🎨',
-    title: 'Creative Curriculum',
-    desc: 'Art, music, drama, and storytelling are woven into everyday learning to fuel imagination and expression.',
-    color: 'feat-golden',
-  },
-  {
-    icon: '🌿',
-    title: 'Green Spaces',
-    desc: 'Dedicated outdoor play areas and nature corners where children connect with the world around them.',
-    color: 'feat-green',
-  },
-  {
-    icon: '📱',
-    title: 'Parent Connect',
-    desc: 'Real-time updates, daily reports, and parent-teacher sessions keep you deeply involved in your child\'s journey.',
-    color: 'feat-blue',
-  },
-]
-
 export default function WhyNirankur() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
+  const handleEnroll = () => {
+    window.dispatchEvent(new CustomEvent('bachpan-open-enroll', { detail: { program: 'Nursery' } }))
+  }
+
   return (
-    <section className="why section-py" id="why-nirankur" ref={ref}>
+    <section className="about-school" id="why-nirankur" ref={ref}>
       <span id="why-wonder-roots" style={{ position: 'relative', top: '-100px', visibility: 'hidden' }} />
       <span id="why-bachpan" style={{ position: 'relative', top: '-100px', visibility: 'hidden' }} />
-      <div className="container">
-        <div className="why__layout">
-          {/* Left: Header */}
+
+      {/* Huge Faint Watermark Text matching reference image */}
+      <div className="about-school__watermark">
+        <span>ABOUT OUR SCHOOL</span>
+      </div>
+
+      <div className="container about-school__container">
+        {/* Title */}
+        <motion.div
+          className="about-school__header"
+          initial={{ opacity: 0, y: 24 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="about-school__title">
+            Where Every Child's <br />
+            Journey Begins in Color
+          </h2>
+        </motion.div>
+
+        {/* 2-Column Story Content */}
+        <div className="about-school__layout">
+          {/* Left Column: Narrative Copy & CTA */}
           <motion.div
-            className="why__header"
-            initial={{ opacity: 0, x: -40 }}
+            className="about-school__text-col"
+            initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
           >
-            <span className="section-badge badge-gold">🌟 Why Choose Us</span>
-            <h2 className="section-title">
-              What Makes Nirankur <span>Different</span>
-            </h2>
-            <p className="section-subtitle">
-              We go beyond academics. At Nirankur, we create an ecosystem where every child feels loved, challenged, and celebrated for who they are.
+            <p className="about-school__paragraph">
+              At <strong>Nirankur Preschool</strong>, we believe that every child is unique and full of potential. Just like the colors of a rainbow and the tender sprout in our logo, each little learner shines in their own way.
             </p>
-            <div className="why__award">
-              <span className="why__award-icon">🏆</span>
-              <div>
-                <strong>Award-Winning Institution</strong>
-                <p>Recognized as India's most trusted preschool network for 3 consecutive years</p>
-              </div>
+
+            <p className="about-school__paragraph">
+              Our safe, nurturing, and creative environment encourages children to explore, imagine, and grow while building a strong foundation for lifelong learning. With caring teachers, engaging activities, and a playful approach, we make every day a joyful adventure.
+            </p>
+
+            <div className="about-school__cta-wrap">
+              <button className="btn btn-primary about-school__btn" onClick={handleEnroll}>
+                Read More
+              </button>
             </div>
-            <button
-              className="btn btn-primary"
-              onClick={() => document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })}
-            >
-              Schedule a Visit →
-            </button>
           </motion.div>
 
-          {/* Right: Feature Grid */}
-          <div className="why__grid">
-            {features.map((feat, i) => (
-              <motion.div
-                key={feat.title}
-                className={`feat-card ${feat.color}`}
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
-              >
-                <div className="feat-card__icon">{feat.icon}</div>
-                <h3 className="feat-card__title">{feat.title}</h3>
-                <p className="feat-card__desc">{feat.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+          {/* Right Column: Framed Real Campus Photo with Illustrated Kids & ABC Blocks */}
+          <motion.div
+            className="about-school__visual-col"
+            initial={{ opacity: 0, x: 30 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.25 }}
+          >
+            <div className="about-school__photo-frame">
+              <img
+                src="/hero-1.jpg"
+                alt="Teacher and young student discovering learning blocks at Nirankur"
+                className="about-school__photo"
+              />
+
+              {/* Playful Floating Children & ABC Blocks Illustration Accent */}
+              <div className="about-school__abc-accent">
+                <svg viewBox="0 0 240 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* Floating Balloons */}
+                  <circle cx="28" cy="40" r="14" fill="#ec4899" />
+                  <path d="M28,54 L28,75" stroke="#94a3b8" strokeWidth="1.5" strokeDasharray="3 2" />
+                  <circle cx="48" cy="28" r="12" fill="#38bdf8" />
+                  <path d="M48,40 L48,65" stroke="#94a3b8" strokeWidth="1.5" strokeDasharray="3 2" />
+
+                  {/* Magnifying Glass of Curiosity */}
+                  <circle cx="85" cy="42" r="14" stroke="#eab308" strokeWidth="4" fill="rgba(254, 240, 138, 0.4)" />
+                  <line x1="95" y1="52" x2="110" y2="67" stroke="#ca8a04" strokeWidth="4" strokeLinecap="round" />
+
+                  {/* World Globe */}
+                  <circle cx="195" cy="65" r="18" fill="#38bdf8" />
+                  <path d="M185,55 Q195,65 190,75 Q205,70 205,60" fill="#22c55e" />
+                  <path d="M195,83 L195,95 L185,95 L205,95" stroke="#64748b" strokeWidth="3" />
+
+                  {/* Colorful ABC Blocks */}
+                  {/* Block A: Green */}
+                  <rect x="75" y="110" width="34" height="34" rx="6" fill="#22c55e" />
+                  <text x="92" y="134" textAnchor="middle" fill="#ffffff" fontFamily="var(--font-heading)" fontWeight="900" fontSize="20">A</text>
+
+                  {/* Block B: Purple */}
+                  <rect x="115" y="110" width="34" height="34" rx="6" fill="#a855f7" />
+                  <text x="132" y="134" textAnchor="middle" fill="#ffffff" fontFamily="var(--font-heading)" fontWeight="900" fontSize="20">B</text>
+
+                  {/* Block C: Yellow */}
+                  <rect x="95" y="72" width="34" height="34" rx="6" fill="#f59e0b" />
+                  <text x="112" y="96" textAnchor="middle" fill="#ffffff" fontFamily="var(--font-heading)" fontWeight="900" fontSize="20">C</text>
+
+                  {/* Little Smiling Explorer Behind Blocks */}
+                  <circle cx="95" cy="50" r="12" fill="#fed7aa" />
+                  <circle cx="91" cy="48" r="1.5" fill="#1e293b" />
+                  <circle cx="99" cy="48" r="1.5" fill="#1e293b" />
+                  <path d="M92,53 Q95,56 98,53" stroke="#b45309" strokeWidth="1" fill="none" />
+                  <path d="M85,42 Q95,34 105,42 Z" fill="#eab308" />
+                </svg>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -43,7 +43,7 @@ const CATEGORIES = [
 const SAMPLE_DEMO_IMAGES = [
   { label: 'Art & Craft', url: '/hero-2.jpg' },
   { label: 'Outdoor Celebration', url: '/hero-1.jpg' },
-  { label: 'Campus Garden', url: '/hero-3.jpg' },
+  { label: 'Campus Garden', url: '/hero-1.jpeg' },
   { label: 'Painting Studio', url: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=80' },
   { label: 'STEM Blocks', url: 'https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=1200&q=80' },
 ]

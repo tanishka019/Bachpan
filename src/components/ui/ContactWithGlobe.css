@@ -1,0 +1,445 @@
+/* ====================================================================
+   CONTACT WITH GLOBE (Nirankur Storybook & Campus Visit Theme)
+   Balanced 2-Column Layout: Contact Cards + 3D Colorful Globe + Form
+   ==================================================================== */
+
+.cwg-section {
+  position: relative;
+  background: #fdfbf4;
+  padding: 60px 0 95px;
+  overflow: hidden;
+  border-top: 1px solid rgba(245, 158, 11, 0.12);
+}
+
+/* ── Faint Background Watermark (Storybook continuity) ── */
+.cwg-watermark {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.cwg-watermark span {
+  font-family: var(--font-heading, sans-serif);
+  font-size: clamp(3rem, 7.5vw, 6rem);
+  font-weight: 900;
+  color: rgba(245, 158, 11, 0.07);
+  letter-spacing: 5px;
+  white-space: nowrap;
+}
+
+.cwg-container {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+  z-index: 1;
+}
+
+/* ── Section Header ── */
+.cwg-header {
+  text-align: center;
+  margin-bottom: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.cwg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: rgba(22, 163, 74, 0.1);
+  border: 1px solid rgba(22, 163, 74, 0.25);
+  color: #15803d;
+  font-family: var(--font-heading, sans-serif);
+  font-weight: 700;
+  font-size: 0.84rem;
+  letter-spacing: 0.3px;
+}
+
+.cwg-title {
+  font-family: var(--font-heading, sans-serif);
+  font-size: clamp(2rem, 3.8vw, 2.9rem);
+  font-weight: 800;
+  color: #c2410c; /* Warm storybook title */
+  line-height: 1.22;
+  margin: 0;
+}
+
+.cwg-subtitle {
+  font-family: var(--font-body, sans-serif);
+  font-size: 1.02rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+/* ── 2-Column Balanced Layout ── */
+.cwg-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: stretch;
+}
+
+/* ── Left Column: Contact Cards + Full Colorful Globe Card ── */
+.cwg-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  height: 100%;
+}
+
+/* 3 Contact Quick Cards */
+.cwg-contact-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.cwg-card-item {
+  background: #ffffff;
+  border: 1.5px solid #f1ece4;
+  border-radius: 16px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  transition: all 0.22s ease;
+}
+
+.cwg-card-item:hover {
+  transform: translateY(-2px);
+  border-color: #86efac;
+  box-shadow: 0 6px 16px rgba(21, 128, 61, 0.09);
+}
+
+.cwg-card-icon-wrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.cwg-card-item:hover .cwg-card-icon-wrap {
+  background: #15803d;
+  color: #ffffff;
+  border-color: #15803d;
+}
+
+.cwg-card-title {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.cwg-card-val {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.25;
+  word-break: break-word;
+}
+
+/* ── The Colorful Globe Showcase Card ── */
+.cwg-globe-box {
+  flex: 1;
+  min-height: 340px;
+  background: radial-gradient(circle at 50% 45%, #eff6ff 0%, #ffffff 75%);
+  border: 1.5px solid #e2e8f0;
+  border-radius: 22px;
+  padding: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.02),
+    0 16px 32px -8px rgba(2, 132, 199, 0.1);
+  overflow: hidden;
+}
+
+.cwg-globe-top-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #0284c7;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.cwg-pulse-indicator {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  animation: cwgPulseGlow 2s infinite;
+}
+
+@keyframes cwgPulseGlow {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 7px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* Globe Stage — perfectly centered, never clipped */
+.cwg-globe-center-stage {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+}
+
+/* Floating City Chips at bottom of Globe */
+.cwg-globe-cities {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  z-index: 10;
+  margin-top: 4px;
+}
+
+.cwg-city-chip {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #475569;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  padding: 3px 9px;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.cwg-city-chip--highlight {
+  color: #15803d;
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  font-weight: 700;
+}
+
+/* ── Right Column: Admission / Tour Booking Form Card ── */
+.cwg-form-box {
+  background: #ffffff;
+  border: 1.5px solid #f1ece4;
+  border-radius: 22px;
+  padding: 28px 32px;
+  box-shadow: 
+    0 4px 14px rgba(0, 0, 0, 0.02),
+    0 18px 36px -10px rgba(69, 26, 3, 0.07);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.cwg-form-title-wrap h3 {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0 0 4px;
+}
+
+.cwg-form-title-wrap p {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.88rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.cwg-dots-divider {
+  width: 100%;
+  height: 8px;
+  background-image: radial-gradient(#d6d3d1 1px, transparent 1px);
+  background-size: 7px 100%;
+  opacity: 0.6;
+  margin: 12px 0 14px;
+}
+
+.cwg-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.cwg-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cwg-form-label {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #64748b;
+}
+
+.cwg-form-input {
+  width: 100%;
+  background: #fafaf9;
+  border: 1.5px solid #e7e5e4;
+  border-radius: 11px;
+  padding: 10px 13px;
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.9rem;
+  color: #1e293b;
+  transition: all 0.2s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.cwg-form-input::placeholder {
+  color: #a8a29e;
+}
+
+.cwg-form-input:focus {
+  border-color: #16a34a;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12);
+}
+
+.cwg-form-textarea {
+  resize: none;
+}
+
+.cwg-btn-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  background: linear-gradient(135deg, #15803d 0%, #16a34a 100%);
+  color: #ffffff;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(21, 128, 61, 0.3);
+  transition: all 0.22s ease;
+  width: fit-content;
+  margin-top: 10px;
+}
+
+.cwg-btn-submit:hover {
+  background: linear-gradient(135deg, #166534 0%, #15803d 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(21, 128, 61, 0.42);
+}
+
+.cwg-btn-arrow {
+  transition: transform 0.22s ease;
+}
+
+.cwg-btn-submit:hover .cwg-btn-arrow {
+  transform: translateX(3px);
+}
+
+/* Success View */
+.cwg-success-view {
+  padding: 40px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  margin: auto;
+}
+
+.cwg-success-icon-wrap {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cwg-success-h3 {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0;
+}
+
+.cwg-success-p {
+  font-size: 0.9rem;
+  color: #64748b;
+  max-width: 320px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .cwg-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .cwg-contact-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .cwg-form-box {
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .cwg-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cwg-btn-submit {
+    width: 100%;
+  }
+}

@@ -38,7 +38,7 @@ export const INITIAL_GALLERY_MEMORIES = [
     caption: 'Instilling values of peace, kindness, and clean surroundings. Our little learners planted marigold saplings and organized their classroom book nooks with gentle pride.',
     category: 'Nature & Values',
     media_type: 'image',
-    url: '/hero-3.jpg',
+    url: '/hero-1.jpeg',
     location: 'Organic Campus Garden',
   },
 
@@ -124,7 +124,7 @@ export const INITIAL_GALLERY_MEMORIES = [
     caption: 'Bright yellow raincoats, rain boots, and paper boat races down gentle rain gutters! A day celebrating the beauty of raindrops, petrichor, and creative origami.',
     category: 'Nature & Values',
     media_type: 'image',
-    url: '/hero-3.jpg',
+    url: '/hero-2.jpg',
     location: 'Open Pavilion',
   },
   {

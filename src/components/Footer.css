@@ -118,6 +118,27 @@
   color: var(--white);
 }
 
+.footer__logo-name.brand-rainbow .c-n1,
+.footer__logo-name.brand-rainbow .c-i,
+.footer__logo-name.brand-rainbow .c-r1 {
+  color: #4ade80;
+}
+.footer__logo-name.brand-rainbow .c-a {
+  color: #f87171;
+}
+.footer__logo-name.brand-rainbow .c-n2 {
+  color: #c084fc;
+}
+.footer__logo-name.brand-rainbow .c-k {
+  color: #818cf8;
+}
+.footer__logo-name.brand-rainbow .c-u {
+  color: #fb923c;
+}
+.footer__logo-name.brand-rainbow .c-r2 {
+  color: #38bdf8;
+}
+
 .footer__logo-sub {
   font-size: 0.68rem;
   font-weight: 700;

@@ -1,179 +1,173 @@
-/* ===========================
-   WHY NIRANKUR SECTION
-   =========================== */
-.why {
-  background: var(--white);
+/* ====================================================================
+   ABOUT OUR SCHOOL — Matched to Storybook Reference Layout
+   ==================================================================== */
+
+.about-school {
   position: relative;
+  background: #fdfbf4;
+  padding: 60px 0 90px;
+  overflow: hidden;
 }
 
-.why__layout {
+/* ── Faint Watermark Text behind Title ── */
+.about-school__watermark {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.about-school__watermark span {
+  font-family: var(--font-heading);
+  font-size: clamp(3.2rem, 8vw, 6.5rem);
+  font-weight: 900;
+  color: rgba(245, 158, 11, 0.08);
+  letter-spacing: 4px;
+  white-space: nowrap;
+}
+
+.about-school__container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Title in Warm Reddish Orange ── */
+.about-school__header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-school__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4.4vw, 3.4rem);
+  font-weight: 800;
+  color: #ea580c;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+/* ── 2-Column Content Layout ── */
+.about-school__layout {
   display: grid;
-  grid-template-columns: 1fr 1.6fr;
-  gap: 64px;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 56px;
   align-items: center;
 }
 
-.why__header {
+/* Left Column */
+.about-school__text-col {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
 }
 
-.why__award {
+.about-school__paragraph {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #64748b;
+}
+
+.about-school__paragraph strong {
+  color: #1e293b;
+}
+
+.about-school__cta-wrap {
+  margin-top: 14px;
+}
+
+.about-school__btn {
+  padding: 13px 34px;
+  font-size: 0.96rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  background: #ea580c;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(234, 88, 12, 0.35);
+  transition: all 0.25s ease;
+}
+
+.about-school__btn:hover {
+  background: #c2410c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(234, 88, 12, 0.45);
+}
+
+/* Right Column: Framed Photo with Illustrated ABC Accents */
+.about-school__visual-col {
+  position: relative;
   display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  background: var(--purple-50);
-  border: 1px solid var(--purple-200);
-  border-radius: var(--radius-lg);
-  padding: 16px 18px;
+  justify-content: center;
 }
 
-.why__award-icon {
-  font-size: 2rem;
-  flex-shrink: 0;
-  line-height: 1;
+.about-school__photo-frame {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 4 / 3.4;
+  border-radius: 28px;
+  overflow: visible;
+  background: #ffffff;
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.12);
+  border: 4px solid #ffffff;
+  transform: rotate(1.5deg);
 }
 
-.why__award strong {
+.about-school__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
   display: block;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.9rem;
-  color: var(--purple-800);
-  margin-bottom: 4px;
 }
 
-.why__award p {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  line-height: 1.5;
+/* Overlaid ABC & Children Illustration */
+.about-school__abc-accent {
+  position: absolute;
+  bottom: -45px;
+  left: -35px;
+  width: 200px;
+  height: 150px;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12));
 }
 
-.why__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+.about-school__abc-accent svg {
+  width: 100%;
+  height: 100%;
 }
 
-/* Feature Cards */
-.feat-card {
-  border-radius: var(--radius-lg);
-  padding: 24px 20px;
-  cursor: default;
-  transition: var(--transition);
-  border: 1px solid transparent;
-}
-
-.feat-card__icon {
-  font-size: 2rem;
-  margin-bottom: 12px;
-  line-height: 1;
-}
-
-.feat-card__title {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.95rem;
-  margin-bottom: 8px;
-}
-
-.feat-card__desc {
-  font-size: 0.82rem;
-  line-height: 1.65;
-}
-
-/* Color Variants */
-.feat-purple {
-  background: #faf5ff;
-  border-color: #f3e8ff;
-}
-.feat-purple:hover {
-  background: #f3e8ff;
-  border-color: #d8b4fe;
-  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.15);
-}
-.feat-purple .feat-card__title { color: #581c87; }
-.feat-purple .feat-card__desc { color: #7e22ce; }
-
-.feat-teal {
-  background: #f0fdfa;
-  border-color: #ccfbf1;
-}
-.feat-teal:hover {
-  background: #ccfbf1;
-  border-color: #99f6e4;
-  box-shadow: 0 4px 20px rgba(13, 148, 136, 0.12);
-}
-.feat-teal .feat-card__title { color: #134e4a; }
-.feat-teal .feat-card__desc { color: #0f766e; }
-
-.feat-coral {
-  background: #fff7ed;
-  border-color: #fed7aa;
-}
-.feat-coral:hover {
-  background: #ffedd5;
-  border-color: #fdba74;
-  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.12);
-}
-.feat-coral .feat-card__title { color: #7c2d12; }
-.feat-coral .feat-card__desc { color: #c2410c; }
-
-.feat-golden {
-  background: #fffbeb;
-  border-color: #fde68a;
-}
-.feat-golden:hover {
-  background: #fef3c7;
-  border-color: #fcd34d;
-  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.12);
-}
-.feat-golden .feat-card__title { color: #78350f; }
-.feat-golden .feat-card__desc { color: #b45309; }
-
-.feat-green {
-  background: #f0fdf4;
-  border-color: #bbf7d0;
-}
-.feat-green:hover {
-  background: #dcfce7;
-  border-color: #86efac;
-  box-shadow: 0 4px 20px rgba(34, 197, 94, 0.12);
-}
-.feat-green .feat-card__title { color: #14532d; }
-.feat-green .feat-card__desc { color: #15803d; }
-
-.feat-blue {
-  background: #eff6ff;
-  border-color: #bfdbfe;
-}
-.feat-blue:hover {
-  background: #dbeafe;
-  border-color: #93c5fd;
-  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.12);
-}
-.feat-blue .feat-card__title { color: #1e3a8a; }
-.feat-blue .feat-card__desc { color: #1d4ed8; }
-
-@media (max-width: 1024px) {
-  .why__layout {
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .about-school__layout {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 48px;
   }
-  .why__grid {
-    grid-template-columns: repeat(3, 1fr);
+
+  .about-school__title {
+    font-size: 2.2rem;
+  }
+
+  .about-school__visual-col {
+    margin-bottom: 20px;
   }
 }
 
 @media (max-width: 640px) {
-  .why__grid {
-    grid-template-columns: repeat(2, 1fr);
+  .about-school {
+    padding: 40px 0 60px;
   }
-}
 
-@media (max-width: 400px) {
-  .why__grid {
-    grid-template-columns: 1fr;
+  .about-school__abc-accent {
+    width: 150px;
+    height: 110px;
+    bottom: -30px;
+    left: -15px;
   }
 }
