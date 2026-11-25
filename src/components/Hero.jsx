@@ -2,11 +2,6 @@ import { motion } from 'framer-motion'
 import './Hero.css'
 
 export default function Hero() {
-  const handleCta = (href) => {
-    const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
-  }
-
   const handleEnroll = () => {
     window.dispatchEvent(new CustomEvent('bachpan-open-enroll', { detail: { program: 'Playgroup' } }))
   }
@@ -118,14 +113,19 @@ export default function Hero() {
           <p className="hero-sb__motto">
             Where Learning Meets Imagination <span className="motto-dot">•</span> The Foundation Stage
           </p>
+        </motion.div>
 
-          {/* Contact / Enroll CTA Button */}
-          <div className="hero-sb__cta-wrap">
-            <button className="btn hero-sb__btn" onClick={handleEnroll}>
-              <span>Enroll Now</span>
-              <span className="btn-sparkle">✨</span>
-            </button>
-          </div>
+        {/* Contact / Enroll CTA Button — positioned cleanly in the open lower space */}
+        <motion.div
+          className="hero-sb__cta-wrap"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <button className="btn hero-sb__btn" onClick={handleEnroll}>
+            <span>Enroll Now</span>
+            <span className="btn-sparkle">✨</span>
+          </button>
         </motion.div>
 
         {/* ── Left Side: Child with Paint Roller + Friendly Story Blurb ── */}
